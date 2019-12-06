@@ -13,9 +13,9 @@ public class Player : MonoBehaviour
         fridge
     }
     [Range(0,100)]
-    public float speed;
-    [Range(0,100)]
-    public float downwardForce=1;
+    public float speed=20;
+    [Range(0,1000)]
+    public float jumpForce=1000;
     private float timeCounter=0;
 
     // Start is called before the first frame update
@@ -28,8 +28,8 @@ public class Player : MonoBehaviour
     {
         float move=Input.GetAxis("Horizontal")*speed;
         float jump=0;
-        if(Physics.Raycast(transform.position, Vector3.down, 10)){
-            jump=Input.GetAxis("Vertical")*downwardForce;
+        if(Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y-0.51f), Vector2.down, 0.01f)){
+            jump=Input.GetAxis("Vertical")*jumpForce;
         }
         Vector2 forces=new Vector2 (move, jump);
         rb2d.AddForce(forces);
