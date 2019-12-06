@@ -28,7 +28,7 @@ public class EnemyMushroom : MonoBehaviour
                 // Moving Left
                 if (enemy.position.x > minDist)
                 {
-                    rb2d.velocity = new Vector2(-movingSpeed, 0);
+                    rb2d.velocity = new Vector2(-movingSpeed, rb2d.velocity.y);
                 }
                 else
                 {
@@ -39,7 +39,7 @@ public class EnemyMushroom : MonoBehaviour
                 //Moving Right
                 if (enemy.position.x < maxDist)
                 {
-                    rb2d.velocity = new Vector2(movingSpeed, 0);
+                    rb2d.velocity = new Vector2(movingSpeed, rb2d.velocity.y);
                 }
                 else
                 {
@@ -47,6 +47,11 @@ public class EnemyMushroom : MonoBehaviour
                 }
                 break;
         }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        direction *= (-1);
     }
 
 }
