@@ -27,7 +27,10 @@ public class Player : MonoBehaviour
     void FixedUpdate()
     {
         float move=Input.GetAxis("Horizontal")*speed;
-        float jump=Input.GetAxis("Vertical")*downwardForce;
+        float jump=0;
+        if(Physics.Raycast(transform.position, Vector3.down, 10)){
+            jump=Input.GetAxis("Vertical")*downwardForce;
+        }
         Vector2 forces=new Vector2 (move, jump);
         rb2d.AddForce(forces);
     }
