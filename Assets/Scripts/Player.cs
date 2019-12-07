@@ -94,12 +94,16 @@ public class Player : MonoBehaviour
 
         startPosX=transform.position.x;
         startPosY=transform.position.y;
+
+        jumpPlateForce=50; //Hardcoded value.
     }
 
     void Reset()
     {
         lives--;
         livesText.text = "" + lives;
+        if(playerState==State.fridge)
+            jumpPlateForce=jumpPlateForce/1.5f;
         if (lives>0)
         {
             vel=Vector2.zero;
@@ -151,10 +155,12 @@ public class Player : MonoBehaviour
             if (playerState != State.fridge)
             {
                 playerState = State.fridge;
+                jumpPlateForce=jumpPlateForce*1.5f;
             }
             else
             {
                 playerState = State.unarmed;
+                jumpPlateForce=jumpPlateForce/1.5f;
             }
         }
         else if (Input.GetButtonDown("Schinken"))
