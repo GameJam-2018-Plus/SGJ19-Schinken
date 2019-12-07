@@ -41,6 +41,8 @@ public class Player : MonoBehaviour
     private float schinkenTimeCounter=0;
     [Range(0, 100)]
     public float fridgeGrav = 70;
+    [Range(0,50)]
+    public float jumpPlateForce=30;
     private float startPosX, startPosY;
 
     private Vector2 vel;
@@ -58,7 +60,7 @@ public class Player : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D other)
     {
-        if(other.collider.tag.Equals("Enemy"))
+        if(other.collider.tag.Equals("Enemy")&&playerState!=State.fridge)
             Reset();
     }
 
@@ -181,7 +183,7 @@ public class Player : MonoBehaviour
                     if (((AnimatedTile)b).tag.Equals("Destructible"))
                         map.SetTile(pos + new Vector3Int(i, 0, 0), null);
                     else if (((AnimatedTile)b).tag.Equals("Jump"))
-                        vel += Vector2.up * 50;
+                        vel += Vector2.up * jumpPlateForce;
                 }
             }
         }
