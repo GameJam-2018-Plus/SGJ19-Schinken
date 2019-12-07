@@ -15,14 +15,17 @@ public class Attack : MonoBehaviour
         if(val!=Frame.clear)
         {
             activeHitbox.SetPath(0, hitboxes[(int) val].GetPath(0));
+            activeHitbox.enabled=true;
             return;
         }
         activeHitbox.pathCount=0;
+        activeHitbox.enabled=false;
     }
 
     void OnCollisionEnter2D(Collision2D other){
-        if(other.collider.tag.Equals("Enemy"))
+        if(other.collider.tag.Equals("Enemy")&&activeHitbox.enabled==true)
         {
+            Debug.Log("Hitbox collided.");
             other.gameObject.GetComponent<EnemyMushroom>().Death();
         }
     }
@@ -33,5 +36,6 @@ public class Attack : MonoBehaviour
         activeHitbox=gameObject.AddComponent<PolygonCollider2D>();
         activeHitbox.isTrigger=true;
         activeHitbox.pathCount=0;
+        activeHitbox.enabled=false;
     }
 }
