@@ -14,8 +14,6 @@ public class Player : MonoBehaviour
     public RectTransform schinkenBar;
     public Transform model;
 
-    public TileBase jump2;
-
     private CameraController cam;
     public bool onGround, inFlight;
     private float lastOnGround = -100, lastInAir = -100;
@@ -190,10 +188,7 @@ public class Player : MonoBehaviour
                         return;
                     }
                     else if (((AnimatedTile)b).tag.Equals("Jump") && onGround && vel.y <= 0.0001F)
-                    {
                         vel += Vector2.up * jumpPlateForce;
-                        map.SetTile(pos + new Vector3Int(i, 0, 0), jump2);
-                    }
                 }
             }
         }
@@ -218,10 +213,7 @@ public class Player : MonoBehaviour
                         map.SetTile(pos + new Vector3Int(i, 0, 0), null);
 
                     else if (((AnimatedTile)b).tag.Equals("Jump") && onGround && vel.y <= 0.0001F)
-                    {
                         vel += Vector2.up * jumpPlateForce;
-                        map.SetTile(pos + new Vector3Int(i, 0, 0), jump2);
-                    }
                 }
             }
         }

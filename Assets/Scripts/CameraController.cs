@@ -30,7 +30,7 @@ public class CameraController : MonoBehaviour
     void Update()
     {
         //transform.position = new Vector3(target.transform.position.x, target.transform.position.y, -8);
-        transform.position = new Vector3(Mathf.Lerp(transform.position.x, target.transform.position.x, damping), transform.position.y + Mathf.Max(0, target.transform.position.y - transform.position.y - yRange) - Mathf.Max(0, transform.position.y - target.transform.position.y - yRange), transform.position.z);
+        transform.position = new Vector3(Mathf.Lerp(transform.position.x, target.transform.position.x + offset.x, damping), transform.position.y + offset.y + Mathf.Max(0, target.transform.position.y - transform.position.y - yRange) - Mathf.Max(0, transform.position.y - target.transform.position.y - yRange), transform.position.z);
 
         float x = (Time.time - shakeTime) / shakeDuration;
         if (x < 1)
