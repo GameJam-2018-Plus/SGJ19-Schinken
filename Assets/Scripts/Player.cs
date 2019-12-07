@@ -13,6 +13,8 @@ public class Player : MonoBehaviour
     public RectTransform freezeBar;
     public RectTransform schinkenBar;
     public Transform model;
+    private Animator anim;
+    private int dir = 1;
 
     private CameraController cam;
     public bool onGround, inFlight;
@@ -40,7 +42,7 @@ public class Player : MonoBehaviour
     [Range(0, 10)]
     public float maxSchinkenTime=10;
     private float schinkenTimeCounter=0;
-    [Range(0, 100)]
+    [Range(0, 150)]
     public float fridgeGrav = 70;
     [Range(0,50)]
     public float jumpPlateForce=50;
@@ -86,6 +88,7 @@ public class Player : MonoBehaviour
     {
         rb2d = GetComponent<Rigidbody2D>();
         cam = FindObjectOfType<CameraController>();
+        anim = model.GetComponentInChildren<Animator>();
         playerState = State.unarmed;
         livesText.text = "" + lives;
 
@@ -131,11 +134,11 @@ public class Player : MonoBehaviour
         if (transform.position.y < -5)
             Reset();
 
-        Vector3Int pos = Vector3Int.FloorToInt(transform.position + Vector3.Scale(new Vector3(-0.49F, -0.6F, 0), transform.localScale));
+        Vector3Int pos = Vector3Int.FloorToInt(transform.position + Vector3.Scale(new Vector3(-0.49F, -1.1F, 0), transform.localScale));
         Vector3Int size = new Vector3Int(1 + Mathf.FloorToInt(transform.position.x + 0.49F * transform.localScale.x) - Mathf.FloorToInt(transform.position.x - 0.49F * transform.localScale.x), 1, 1);
         TileBase[] floorTiles = map.GetTilesBlock(new BoundsInt(pos, size));
 
-        bool onGround = Physics2D.Raycast(new Vector2(rb2d.position.x, rb2d.position.y - 0.51f * transform.localScale.y), Vector2.down, 0.025F);
+        bool onGround = Physics2D.Raycast(new Vector2(rb2d.position.x, rb2d.position.y - 1.1f * transform.localScale.y), Vector2.down, 0.025F);
         if (onGround && !this.onGround)
         {
             cam.Shake();
@@ -174,6 +177,14 @@ public class Player : MonoBehaviour
         if (playerState != State.fridge)
         {
             vel.x = Input.GetAxis("Horizontal") * speed;
+
+            if (vel.x > 0.01F)
+                dir = 1;
+            else if (vel.x < 0.01F)
+                dir = -1;
+            anim.SetInteger("direction", dir);
+            anim.SetFloat("speed", Mathf.Abs(vel.x));
+
             jump();
             if(playerState==State.armed)
             {
@@ -232,8 +243,8 @@ public class Player : MonoBehaviour
         float x = Mathf.Clamp01((Time.time - lastInAir) / 0.2F);
         float squash = Mathf.Sin(x * Mathf.PI) * (1 - x);
         float stretch = onGround ? 0 : Mathf.Clamp01(1 - vel.y * vel.y / 500) * (1 - squash) * Mathf.Clamp01((Time.time - lastOnGround) / 0.5F);
-        model.localScale = new Vector3(1 + 0.2F * squash - stretch * 0.2F, 1 - 0.2F * squash + stretch * 0.2F, 1);
-        model.localPosition = new Vector3(0, -0.11F * squash, 0);
+        model.localScale = new Vector3(1 + 0.1F * squash - stretch * 0.1F, 1 - 0.1F * squash + stretch * 0.1F, 1) * 2;
+        model.localPosition = new Vector3(0, -0.06F * squash, 0);
 
         freezeBar.localScale = new Vector3(Mathf.Clamp01(1 - fridgeTimeCounter / maxFridgeTime), 1, 1);
         schinkenBar.localScale = new Vector3(Mathf.Clamp01(1 - schinkenTimeCounter / maxSchinkenTime), 1, 1);
