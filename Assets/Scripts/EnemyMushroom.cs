@@ -6,9 +6,9 @@ public class EnemyMushroom : MonoBehaviour
 {
     private Rigidbody2D rb2d;
     private Transform enemy;
-    private float maxDist = 12.5f;
-    private float minDist = -12.5f;
-    private float movingSpeed = 10f;
+    private float maxDist = 5.5f;
+    private float minDist = -5.5f;
+    private float movingSpeed = 5f;
     private int direction;
 
     public void Death()
