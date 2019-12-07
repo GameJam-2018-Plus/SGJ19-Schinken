@@ -1,9 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class Player : MonoBehaviour
 {
+    public Tilemap map;
+    public TileBase destructible, fire;
+
     private int lives=3;
     private Rigidbody2D rb2d;
     private enum State
@@ -33,7 +37,11 @@ public class Player : MonoBehaviour
         rb2d.AddForce(jumpVec, ForceMode2D.Impulse);
     }
 
-    // Start is called before the first frame update
+    void Kill()
+    {
+        transform.position = Vector3.zero;
+    }
+
     void Start()
     {
         rb2d=GetComponent<Rigidbody2D>();
@@ -41,6 +49,25 @@ public class Player : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (transform.position.y < -5)
+            Kill();
+
+        Vector3Int pos = Vector3Int.FloorToInt(transform.position + Vector3.Scale(new Vector3(-0.49F, -0.6F, 0), transform.localScale));
+        Vector3Int size = new Vector3Int(1 + Mathf.FloorToInt(transform.position.x + 0.49F * transform.localScale.x) - Mathf.FloorToInt(transform.position.x - 0.49F * transform.localScale.x), 1, 1);
+        TileBase[] floorTiles = map.GetTilesBlock(new BoundsInt(pos, size));
+
+        for (int i = 0; i < floorTiles.Length; ++i)
+        {
+            TileBase b = floorTiles[i];
+            if (b == fire)
+            {
+                Kill();
+                break;
+            }
+            else if (b == destructible)
+                map.SetTile(pos + new Vector3Int(i, 0, 0), null);
+        }
+
         move();
         jump();
     }
