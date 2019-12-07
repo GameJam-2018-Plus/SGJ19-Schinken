@@ -6,9 +6,18 @@ public class Attack : MonoBehaviour
 {
     private PolygonCollider2D[] hitboxes;
     private PolygonCollider2D activeHitbox;
-    public enum frames
+    public enum Frame
     {
         clear
+    }
+
+    void updateHitbox(Frame val){
+        if(val!=Frame.clear)
+        {
+            activeHitbox.SetPath(0, hitboxes[(int) val].GetPath(0));
+            return;
+        }
+        activeHitbox.pathCount=0;
     }
 
     void OnCollisionEnter2D(Collision2D other){
