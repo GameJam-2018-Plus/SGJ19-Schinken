@@ -43,7 +43,7 @@ public class Player : MonoBehaviour
     [Range(0, 100)]
     public float fridgeGrav = 70;
     [Range(0,50)]
-    public float jumpPlateForce=30;
+    public float jumpPlateForce=50;
     private float startPosX, startPosY;
 
     private Vector2 vel;
@@ -75,7 +75,7 @@ public class Player : MonoBehaviour
             startPosX=transform.position.x;
             startPosY=transform.position.y;
         }
-        else if (other.tag.Equals("Poison"))
+        else if (other.tag.Equals("Poison")&&playerState!=State.fridge)
         {
             Reset();
         }
