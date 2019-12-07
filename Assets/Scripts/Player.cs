@@ -196,8 +196,9 @@ public class Player : MonoBehaviour
 
         vel += Physics2D.gravity * Time.fixedDeltaTime;
         rb2d.velocity = vel;
-        float squash = Mathf.Sin(Mathf.Clamp01((Time.time - lastInAir) / 0.2F) * Mathf.PI);
-        float stretch = onGround ? 0 : Mathf.Clamp01(1 - vel.y * vel.y / 500);
+        float x = Mathf.Clamp01((Time.time - lastInAir) / 0.2F);
+        float squash = Mathf.Sin(x * Mathf.PI) * (1 - x);
+        float stretch = onGround ? 0 : Mathf.Clamp01(1 - vel.y * vel.y / 500) * (1 - squash) * Mathf.Clamp01((Time.time - lastOnGround) / 0.5F);
         model.localScale = new Vector3(1 + 0.2F * squash - stretch * 0.2F, 1 - 0.2F * squash + stretch * 0.2F, 1);
         model.localPosition = new Vector3(0, -0.11F * squash, 0);
 

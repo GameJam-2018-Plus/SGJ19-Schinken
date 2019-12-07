@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 818ef2a631aaa99408018aa9514ff233, type: 3}
+  m_Name: Mushroom
+  m_EditorClassIdentifier: 
+  tag: 
+  m_AnimatedSprites:
+  - {fileID: -3097342991762851659, guid: 009518ade54979842a7806a866639874, type: 3}
+  - {fileID: -8835274597533513770, guid: 009518ade54979842a7806a866639874, type: 3}
+  - {fileID: 2288768979443741509, guid: 009518ade54979842a7806a866639874, type: 3}
+  - {fileID: 8108619787234300647, guid: 009518ade54979842a7806a866639874, type: 3}
+  m_MinSpeed: 3
+  m_MaxSpeed: 3
+  m_AnimationStartTime: 0
+  m_TileColliderType: 0
