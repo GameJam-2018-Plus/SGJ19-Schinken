@@ -19,7 +19,7 @@ public class BossBehaviour : MonoBehaviour
     void Start()
     {
         state = State.idle;
-        StartCoroutine();
+        //StartCoroutine();
     }
 
 
