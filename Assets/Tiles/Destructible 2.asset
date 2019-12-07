@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 818ef2a631aaa99408018aa9514ff233, type: 3}
-  m_Name: Destructible
+  m_Name: Destructible 2
   m_EditorClassIdentifier: 
   tag: Destructible
   m_AnimatedSprites:
-  - {fileID: -6727896949410453641, guid: 33afad96933e7754aa68ce0e06137444, type: 3}
-  - {fileID: -404068713617580857, guid: 33afad96933e7754aa68ce0e06137444, type: 3}
-  - {fileID: 2048512808616460393, guid: 33afad96933e7754aa68ce0e06137444, type: 3}
+  - {fileID: -2542059494988073116, guid: 33afad96933e7754aa68ce0e06137444, type: 3}
+  - {fileID: 1520262093544224907, guid: 33afad96933e7754aa68ce0e06137444, type: 3}
+  - {fileID: 6272262446413354746, guid: 33afad96933e7754aa68ce0e06137444, type: 3}
   m_MinSpeed: 4
   m_MaxSpeed: 4
   m_AnimationStartTime: 0

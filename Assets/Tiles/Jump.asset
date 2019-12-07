@@ -14,8 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tag: Jump
   m_AnimatedSprites:
-  - {fileID: 0}
-  - {fileID: 7223950226953391895, guid: dae22f857a7eee34caee7e8c2016c11d, type: 3}
+  - {fileID: 3825268844175004017, guid: 90ec858b9722ffd48bec1286056f0ba3, type: 3}
   m_MinSpeed: 1
   m_MaxSpeed: 1
   m_AnimationStartTime: 0
