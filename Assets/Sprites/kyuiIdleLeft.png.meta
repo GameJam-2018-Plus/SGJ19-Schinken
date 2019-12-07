@@ -1,91 +1,91 @@
 fileFormatVersion: 2
-guid: 424abaee87f99d149a0bf90933c256ab
+guid: c735c6dce0859b046b9ae2c9cc1e6f27
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7228656232485249135
-    second: kyuiWalkRight_0
+      213: 5827928010811162272
+    second: kyuiIdleLeft_0
   - first:
-      213: 3833584128499932526
-    second: kyuiWalkRight_1
+      213: -7475567488527402790
+    second: kyuiIdleLeft_1
   - first:
-      213: -3662473410985770495
-    second: kyuiWalkRight_2
+      213: -3539957529665287742
+    second: kyuiIdleLeft_2
   - first:
-      213: -4522160831806598071
-    second: kyuiWalkRight_3
+      213: -1415853843317356416
+    second: kyuiIdleLeft_3
   - first:
-      213: 710896742012681948
-    second: kyuiWalkRight_4
+      213: 5055022864130634848
+    second: kyuiIdleLeft_4
   - first:
-      213: 3679949004066063293
-    second: kyuiWalkRight_5
+      213: 1199537103364092955
+    second: kyuiIdleLeft_5
   - first:
-      213: -5017945355223361454
-    second: kyuiWalkRight_6
+      213: -2573620112954264972
+    second: kyuiIdleLeft_6
   - first:
-      213: 1821330634320509049
-    second: kyuiWalkRight_7
+      213: -3376949854496401131
+    second: kyuiIdleLeft_7
   - first:
-      213: 3446038856900376084
-    second: kyuiWalkRight_8
+      213: 5672349460558343390
+    second: kyuiIdleLeft_8
   - first:
-      213: 7200459751174252472
-    second: kyuiWalkRight_9
+      213: 282975908474943765
+    second: kyuiIdleLeft_9
   - first:
-      213: -6864681470642531155
-    second: kyuiWalkRight_10
+      213: 4061151526260087055
+    second: kyuiIdleLeft_10
   - first:
-      213: -3537411474242473664
-    second: kyuiWalkRight_11
+      213: -1605461093686231141
+    second: kyuiIdleLeft_11
   - first:
-      213: -3715566742207894700
-    second: kyuiWalkRight_12
+      213: 4766368184307657820
+    second: kyuiIdleLeft_12
   - first:
-      213: -8949701160988035337
-    second: kyuiWalkRight_13
+      213: 6479675472112395616
+    second: kyuiIdleLeft_13
   - first:
-      213: 51927425440589455
-    second: kyuiWalkRight_14
+      213: 6379911443428679003
+    second: kyuiIdleLeft_14
   - first:
-      213: 476654440398787060
-    second: kyuiWalkRight_15
+      213: -7566251098687909254
+    second: kyuiIdleLeft_15
   - first:
-      213: -3826750127208191385
-    second: kyuiWalkRight_16
+      213: -5272093111715465862
+    second: kyuiIdleLeft_16
   - first:
-      213: -4694267863814939633
-    second: kyuiWalkRight_17
+      213: -7589200936754745191
+    second: kyuiIdleLeft_17
   - first:
-      213: -4303716695710712286
-    second: kyuiWalkRight_18
+      213: 5739013486644755245
+    second: kyuiIdleLeft_18
   - first:
-      213: 602846530983300364
-    second: kyuiWalkRight_19
+      213: -7035939249082892203
+    second: kyuiIdleLeft_19
   - first:
-      213: 9071530323520031108
-    second: kyuiWalkRight_20
+      213: 1672231960580065153
+    second: kyuiIdleLeft_20
   - first:
-      213: 5635150198381528453
-    second: kyuiWalkRight_21
+      213: 9006936250605081463
+    second: kyuiIdleLeft_21
   - first:
-      213: 5239094074317171076
-    second: kyuiWalkRight_22
+      213: 7039551425548736611
+    second: kyuiIdleLeft_22
   - first:
-      213: 7245622837238926441
-    second: kyuiWalkRight_23
+      213: 8200626951088133672
+    second: kyuiIdleLeft_23
   - first:
-      213: -3882586636235762644
-    second: kyuiWalkRight_24
+      213: 4005905171925271227
+    second: kyuiIdleLeft_24
   - first:
-      213: 7834325599904874066
-    second: kyuiWalkRight_25
+      213: -8605469839527016381
+    second: kyuiIdleLeft_25
   - first:
-      213: 382071796434185890
-    second: kyuiWalkRight_26
+      213: -8417199420282354518
+    second: kyuiIdleLeft_26
   - first:
-      213: 2794283577471294982
-    second: kyuiWalkRight_27
+      213: -5248155001661802022
+    second: kyuiIdleLeft_27
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -182,7 +182,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: kyuiWalkRight_0
+      name: kyuiIdleLeft_0
       rect:
         serializedVersion: 2
         x: 0
@@ -196,14 +196,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fb36db0ab33a6ce45b152d5d9e8d5c39
-      internalID: 7228656232485249135
+      spriteID: efc7f569d98411241a3cd77ec48ba42f
+      internalID: 5827928010811162272
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: kyuiWalkRight_1
+      name: kyuiIdleLeft_1
       rect:
         serializedVersion: 2
         x: 128
@@ -217,14 +217,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6b04ca36b0607144080abf9bee11e584
-      internalID: 3833584128499932526
+      spriteID: ad9ca03e02d3ee246b7b9a0ac77c4b60
+      internalID: -7475567488527402790
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: kyuiWalkRight_2
+      name: kyuiIdleLeft_2
       rect:
         serializedVersion: 2
         x: 256
@@ -238,14 +238,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 74bd57a501a73024abf336474a87a96d
-      internalID: -3662473410985770495
+      spriteID: 990e5937555ce87498771e83ef146546
+      internalID: -3539957529665287742
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: kyuiWalkRight_3
+      name: kyuiIdleLeft_3
       rect:
         serializedVersion: 2
         x: 384
@@ -259,14 +259,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c89aa9fcddf8f8749b0344a2bf5b80fe
-      internalID: -4522160831806598071
+      spriteID: 8a2586b2c3a0ac84cb64e279956d9e8d
+      internalID: -1415853843317356416
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: kyuiWalkRight_4
+      name: kyuiIdleLeft_4
       rect:
         serializedVersion: 2
         x: 512
@@ -280,14 +280,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: be7594330db117c409d2410711bd7a71
-      internalID: 710896742012681948
+      spriteID: 47f8898ccbad2e04896564a36a655c59
+      internalID: 5055022864130634848
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: kyuiWalkRight_5
+      name: kyuiIdleLeft_5
       rect:
         serializedVersion: 2
         x: 0
@@ -301,14 +301,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 60713584439f99042a08f1218022e4bc
-      internalID: 3679949004066063293
+      spriteID: f8607a6860d9c7245acaf3fd174497a5
+      internalID: 1199537103364092955
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: kyuiWalkRight_6
+      name: kyuiIdleLeft_6
       rect:
         serializedVersion: 2
         x: 128
@@ -322,14 +322,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cc0e44bbf0aed0141bf8d7f610911cfd
-      internalID: -5017945355223361454
+      spriteID: 9237cffae80a37042beb748eb0e574ef
+      internalID: -2573620112954264972
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: kyuiWalkRight_7
+      name: kyuiIdleLeft_7
       rect:
         serializedVersion: 2
         x: 256
@@ -343,14 +343,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7b7e48112146b1046a237f7664553120
-      internalID: 1821330634320509049
+      spriteID: c7e4308de55ba1643ae3ff132a84c4bf
+      internalID: -3376949854496401131
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: kyuiWalkRight_8
+      name: kyuiIdleLeft_8
       rect:
         serializedVersion: 2
         x: 384
@@ -364,14 +364,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fb2972f81f92ee7428c8c679cd8e68f0
-      internalID: 3446038856900376084
+      spriteID: 68d4c7248ba81d744bff2a174f9b5984
+      internalID: 5672349460558343390
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: kyuiWalkRight_9
+      name: kyuiIdleLeft_9
       rect:
         serializedVersion: 2
         x: 512
@@ -385,14 +385,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 53b4539c811a4c24980036b741d1c909
-      internalID: 7200459751174252472
+      spriteID: 88957c8306a4ed244953868e28277b45
+      internalID: 282975908474943765
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: kyuiWalkRight_10
+      name: kyuiIdleLeft_10
       rect:
         serializedVersion: 2
         x: 0
@@ -406,14 +406,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9a0e243353e5d1040a59f217b6df408d
-      internalID: -6864681470642531155
+      spriteID: 8992094cbbe445d42b54d21f965e657f
+      internalID: 4061151526260087055
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: kyuiWalkRight_11
+      name: kyuiIdleLeft_11
       rect:
         serializedVersion: 2
         x: 128
@@ -427,14 +427,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2b55abfb8910aa64784ba0c328a4dcd8
-      internalID: -3537411474242473664
+      spriteID: b52238ac054778d418f5e83cac955592
+      internalID: -1605461093686231141
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: kyuiWalkRight_12
+      name: kyuiIdleLeft_12
       rect:
         serializedVersion: 2
         x: 256
@@ -448,14 +448,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e5689587dbe58294abcbe23ab27ea4f7
-      internalID: -3715566742207894700
+      spriteID: 12bbd9243814e734585b0a1572277d25
+      internalID: 4766368184307657820
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: kyuiWalkRight_13
+      name: kyuiIdleLeft_13
       rect:
         serializedVersion: 2
         x: 384
@@ -469,14 +469,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 27f33fd420cb7964dbf4502fd7d3e4ed
-      internalID: -8949701160988035337
+      spriteID: 5365fff3f26ba0e49b74daede3273da1
+      internalID: 6479675472112395616
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: kyuiWalkRight_14
+      name: kyuiIdleLeft_14
       rect:
         serializedVersion: 2
         x: 512
@@ -490,14 +490,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5f0438c7841df1f459e0ffa04f67203b
-      internalID: 51927425440589455
+      spriteID: 02478091e5e2062499af7caea149d9cc
+      internalID: 6379911443428679003
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: kyuiWalkRight_15
+      name: kyuiIdleLeft_15
       rect:
         serializedVersion: 2
         x: 0
@@ -511,14 +511,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 04d8e23ea032ba04ca8d846bacdd3327
-      internalID: 476654440398787060
+      spriteID: 42ec0e53bf9ff25478a4197150a081ca
+      internalID: -7566251098687909254
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: kyuiWalkRight_16
+      name: kyuiIdleLeft_16
       rect:
         serializedVersion: 2
         x: 128
@@ -532,14 +532,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1bf1992765bec7f478b12a94dec7557b
-      internalID: -3826750127208191385
+      spriteID: 540d2035040908e4c8f0f3078573835a
+      internalID: -5272093111715465862
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: kyuiWalkRight_17
+      name: kyuiIdleLeft_17
       rect:
         serializedVersion: 2
         x: 256
@@ -553,14 +553,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 19161a2e41d24b84c8fbfdffa1e9ac29
-      internalID: -4694267863814939633
+      spriteID: d9555c5ff65407346aa887a9ca027329
+      internalID: -7589200936754745191
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: kyuiWalkRight_18
+      name: kyuiIdleLeft_18
       rect:
         serializedVersion: 2
         x: 384
@@ -574,14 +574,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 86f3903345f0e6b41a6429a47d1a21ba
-      internalID: -4303716695710712286
+      spriteID: f95b58eeed7fb074fa700e030e48c0b1
+      internalID: 5739013486644755245
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: kyuiWalkRight_19
+      name: kyuiIdleLeft_19
       rect:
         serializedVersion: 2
         x: 512
@@ -595,14 +595,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 63d919e60303ba94796c15000039df2e
-      internalID: 602846530983300364
+      spriteID: baf4a7a5d68e4f74da6811919106765e
+      internalID: -7035939249082892203
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: kyuiWalkRight_20
+      name: kyuiIdleLeft_20
       rect:
         serializedVersion: 2
         x: 0
@@ -616,14 +616,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0af429fef0711e44a89702cc762bf4b3
-      internalID: 9071530323520031108
+      spriteID: f97a1ed976f5ae3469ad671c6499f98e
+      internalID: 1672231960580065153
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: kyuiWalkRight_21
+      name: kyuiIdleLeft_21
       rect:
         serializedVersion: 2
         x: 128
@@ -637,14 +637,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4c308d115c4c6d14ebd98216da6adf15
-      internalID: 5635150198381528453
+      spriteID: b730f8223f3ed0847a255f5e08c4e780
+      internalID: 9006936250605081463
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: kyuiWalkRight_22
+      name: kyuiIdleLeft_22
       rect:
         serializedVersion: 2
         x: 256
@@ -658,14 +658,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dfbd653a9cf9a224f9d6dd52a649e011
-      internalID: 5239094074317171076
+      spriteID: 227037a95d14fa04d9465efedfe3d581
+      internalID: 7039551425548736611
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: kyuiWalkRight_23
+      name: kyuiIdleLeft_23
       rect:
         serializedVersion: 2
         x: 384
@@ -679,14 +679,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 46888faee15eca543b0325ceaaf0d867
-      internalID: 7245622837238926441
+      spriteID: 34a0be8cd2a2b2949ad556f151fcaac3
+      internalID: 8200626951088133672
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: kyuiWalkRight_24
+      name: kyuiIdleLeft_24
       rect:
         serializedVersion: 2
         x: 512
@@ -700,14 +700,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6473366d17eb41b4aa8b75867602131d
-      internalID: -3882586636235762644
+      spriteID: cda6259935023e748b62dcc51fcfa002
+      internalID: 4005905171925271227
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: kyuiWalkRight_25
+      name: kyuiIdleLeft_25
       rect:
         serializedVersion: 2
         x: 0
@@ -721,14 +721,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 18cf09138319f22489b8ccf52ba268a9
-      internalID: 7834325599904874066
+      spriteID: bb920b8e58fc5084f9044142e09c7327
+      internalID: -8605469839527016381
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: kyuiWalkRight_26
+      name: kyuiIdleLeft_26
       rect:
         serializedVersion: 2
         x: 128
@@ -742,14 +742,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 000bba1dcf858e74f8e1ffd9d6c87b78
-      internalID: 382071796434185890
+      spriteID: 2b0a548c7cd725d4e8f8d6d03c5e0d8b
+      internalID: -8417199420282354518
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: kyuiWalkRight_27
+      name: kyuiIdleLeft_27
       rect:
         serializedVersion: 2
         x: 256
@@ -763,8 +763,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b23577b36ce9e8e4c96714e11797013f
-      internalID: 2794283577471294982
+      spriteID: 6fcf387f50c57f94bb13eb96e004e685
+      internalID: -5248155001661802022
       vertices: []
       indices: 
       edges: []
