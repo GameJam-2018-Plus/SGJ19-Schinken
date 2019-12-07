@@ -6,9 +6,30 @@ public class CameraController : MonoBehaviour
 {
     public Transform target;
     public float damping;
+    public float shakeDuration;
 
-    void FixedUpdate()
+    private Camera cam;
+    private float shakeTime = -100;
+    public float shakeStrength = 5;
+
+    private void Start()
+    {
+        cam = GetComponent<Camera>();
+    }
+
+    public void Shake()
+    {
+        shakeTime = Time.time;
+    }
+
+    void Update()
     {
         transform.position = new Vector3(Mathf.Lerp(transform.position.x, target.transform.position.x, damping), transform.position.y, transform.position.z);
+
+        float x = (Time.time - shakeTime) / shakeDuration;
+        if (x < 1)
+            cam.fieldOfView = 50 - shakeStrength * Mathf.Sin(Mathf.Sqrt(x) * Mathf.PI) * (1 - x);
+        else
+            cam.fieldOfView = 50;
     }
 }

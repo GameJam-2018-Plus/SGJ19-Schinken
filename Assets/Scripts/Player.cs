@@ -8,19 +8,24 @@ public class Player : MonoBehaviour
     public Tilemap map;
     public TileBase destructible, fire;
 
+    private CameraController cam;
+    private bool onGround;
+
     private int lives = 3;
     private Rigidbody2D rb2d;
-    private enum State
+    public enum State
     {
         unarmed,
         armed,
         fridge
     }
-    private State playerState;
+    public State playerState = State.unarmed;
     [Range(0, 20)]
     public float speed = 15;
     [Range(0, 10)]
-    public float jumpForce = 7;
+    private float jumpForce = 7;
+    public float jumpHeight, jumpTime;
+
     private float timeCounter = 0;
     [Range(0, 100)]
     public float fridgeGrav = 70;
@@ -35,7 +40,7 @@ public class Player : MonoBehaviour
     void jump()
     {
         float jump = 0;
-        if (Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y - 0.51f), Vector2.down, 0.01f) && Input.GetButtonDown("Jump"))
+        if (onGround && Input.GetButtonDown("Jump"))
         {
             jump = jumpForce;
         }
@@ -51,7 +56,11 @@ public class Player : MonoBehaviour
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
+        cam = FindObjectOfType<CameraController>();
         playerState = State.unarmed;
+
+        jumpForce = 4F * jumpHeight / jumpTime;
+        Physics2D.gravity = Vector2.down * jumpForce * 2F / jumpTime;
     }
 
     void FixedUpdate()
@@ -63,18 +72,23 @@ public class Player : MonoBehaviour
         Vector3Int size = new Vector3Int(1 + Mathf.FloorToInt(transform.position.x + 0.49F * transform.localScale.x) - Mathf.FloorToInt(transform.position.x - 0.49F * transform.localScale.x), 1, 1);
         TileBase[] floorTiles = map.GetTilesBlock(new BoundsInt(pos, size));
 
-        move();
-        jump();
+        bool onGround = Physics2D.Raycast(new Vector2(rb2d.position.x, rb2d.position.y - 0.51f), Vector2.down, 0.01F);
+        if (onGround && !this.onGround)
+            cam.Shake();
+
+        this.onGround = onGround;
 
         if (Input.GetButtonDown("Fridge"))
         {
             if (playerState != State.fridge)
             {
                 playerState = State.fridge;
+                rb2d.constraints |= RigidbodyConstraints2D.FreezePositionX;
             }
             else
             {
                 playerState = State.unarmed;
+                rb2d.constraints &= ~RigidbodyConstraints2D.FreezePositionX;
             }
         }
         else if (Input.GetButtonDown("Schinken"))
@@ -88,6 +102,7 @@ public class Player : MonoBehaviour
                 playerState = State.armed;
             }
         }
+
         if (playerState != State.fridge)
         {
             move();
@@ -102,8 +117,7 @@ public class Player : MonoBehaviour
         }
         else
         {
-            rb2d.velocity = Vector2.zero;
-            rb2d.AddForce(Vector2.down * (-Physics2D.gravity) * fridgeGrav);
+            rb2d.AddForce(Vector2.down * fridgeGrav);
 
             for (int i = 0; i < floorTiles.Length; ++i)
             {
