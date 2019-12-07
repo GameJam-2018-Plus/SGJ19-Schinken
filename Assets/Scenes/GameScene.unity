@@ -10032,7 +10032,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 540274686}
   hud: {fileID: 1638608579}
-  yRange: 1
+  yRange: 2
   damping: 0.1
   shakeDuration: 0.4
   offset: {x: 0, y: 2}
@@ -10251,6 +10251,7 @@ MonoBehaviour:
   livesText: {fileID: 148087271}
   freezeBar: {fileID: 1867772776}
   schinkenBar: {fileID: 126256264}
+  onGround: 0
   playerState: 0
   speed: 15
   jumpHeight: 4
@@ -10259,6 +10260,7 @@ MonoBehaviour:
   maxFridgeTime: 10
   maxSchinkenTime: 10
   fridgeGrav: 80
+  jumpPlateForce: 30
 --- !u!114 &540274690
 MonoBehaviour:
   m_ObjectHideFlags: 0
