@@ -33,8 +33,6 @@ public class Player : MonoBehaviour
     private float jumpForce = 7;
     public float jumpHeight, jumpTime;
     public float coyote;
-
-    private float timeCounter = 0;  
     private float fridgeTimeCounter = 0;
     [Range(0, 10)]
     public float maxFridgeTime=10;
