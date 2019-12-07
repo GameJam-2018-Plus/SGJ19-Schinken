@@ -60,7 +60,7 @@ public class Player : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D other)
     {
-        if(other.collider.tag.Equals("Enemy"))
+        if(other.collider.tag.Equals("Enemy")&&playerState!=State.fridge)
             Reset();
     }
 
