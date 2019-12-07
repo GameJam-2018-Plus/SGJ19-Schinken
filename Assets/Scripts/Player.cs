@@ -15,7 +15,7 @@ public class Player : MonoBehaviour
     public Transform model;
 
     private CameraController cam;
-    public bool onGround;
+    public bool onGround, inFlight;
     private float lastOnGround = -100, lastInAir = -100;
 
     
@@ -185,7 +185,7 @@ public class Player : MonoBehaviour
                TileBase b = floorTiles[i];
                if (b is AnimatedTile)
                {
-                    if (((AnimatedTile)b).tag.Equals("Destructible"))
+                    if (((AnimatedTile)b).tag.Equals("Destructible")&&inFlight)
                         map.SetTile(pos + new Vector3Int(i, 0, 0), null);
 
                     else if (((AnimatedTile)b).tag.Equals("Jump"))
@@ -203,5 +203,10 @@ public class Player : MonoBehaviour
 
         freezeBar.localScale = new Vector3(Mathf.Clamp01(1 - fridgeTimeCounter / maxFridgeTime), 1, 1);
         schinkenBar.localScale = new Vector3(Mathf.Clamp01(1 - schinkenTimeCounter / maxSchinkenTime), 1, 1);
+
+        if(onGround==true)
+            inFlight=false;
+        else
+            inFlight=true;
     }
 }
