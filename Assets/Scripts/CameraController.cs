@@ -9,12 +9,14 @@ public class CameraController : MonoBehaviour
     public float shakeDuration;
 
     private Camera cam;
+    private float fov;
     private float shakeTime = -100;
     public float shakeStrength = 5;
 
     private void Start()
     {
         cam = GetComponent<Camera>();
+        fov = cam.fieldOfView;
     }
 
     public void Shake()
@@ -28,8 +30,8 @@ public class CameraController : MonoBehaviour
 
         float x = (Time.time - shakeTime) / shakeDuration;
         if (x < 1)
-            cam.fieldOfView = 50 - shakeStrength * Mathf.Sin(Mathf.Sqrt(x) * Mathf.PI) * (1 - x);
+            cam.fieldOfView = fov - shakeStrength * Mathf.Sin(Mathf.Sqrt(x) * Mathf.PI) * (1 - x);
         else
-            cam.fieldOfView = 50;
+            cam.fieldOfView = fov;
     }
 }
