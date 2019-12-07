@@ -6923,7 +6923,7 @@ MonoBehaviour:
   freezeBar: {fileID: 1867772776}
   schinkenBar: {fileID: 126256264}
   playerState: 0
-  speed: 20
+  speed: 15
   jumpHeight: 4
   jumpTime: 0.75
   coyote: 0.1
