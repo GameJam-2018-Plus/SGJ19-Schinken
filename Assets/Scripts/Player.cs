@@ -14,8 +14,6 @@ public class Player : MonoBehaviour
     public RectTransform schinkenBar;
     public Transform model;
 
-    public TileBase jump2;
-
     private CameraController cam;
     public bool onGround, inFlight;
     private float lastOnGround = -100, lastInAir = -100;
@@ -45,7 +43,7 @@ public class Player : MonoBehaviour
     [Range(0, 100)]
     public float fridgeGrav = 70;
     [Range(0,50)]
-    public float jumpPlateForce=30;
+    public float jumpPlateForce=50;
     private float startPosX, startPosY;
 
     private Vector2 vel;
@@ -74,7 +72,7 @@ public class Player : MonoBehaviour
             startPosX=transform.position.x;
             startPosY=transform.position.y;
         }
-        else if (other.tag.Equals("Poison"))
+        else if (other.tag.Equals("Poison")&&playerState!=State.fridge)
         {
             Reset();
         }
@@ -120,6 +118,9 @@ public class Player : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (Input.GetKeyDown(KeyCode.F1))
+            ScreenCapture.CaptureScreenshot(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Desktop) + "/Screenshot_" + (System.Environment.TickCount) + ".png");
+
         if (transform.position.y < -5)
             Reset();
 
@@ -187,10 +188,7 @@ public class Player : MonoBehaviour
                         return;
                     }
                     else if (((AnimatedTile)b).tag.Equals("Jump") && onGround && vel.y <= 0.0001F)
-                    {
                         vel += Vector2.up * jumpPlateForce;
-                        map.SetTile(pos + new Vector3Int(i, 0, 0), jump2);
-                    }
                 }
             }
         }
@@ -215,10 +213,7 @@ public class Player : MonoBehaviour
                         map.SetTile(pos + new Vector3Int(i, 0, 0), null);
 
                     else if (((AnimatedTile)b).tag.Equals("Jump") && onGround && vel.y <= 0.0001F)
-                    {
                         vel += Vector2.up * jumpPlateForce;
-                        map.SetTile(pos + new Vector3Int(i, 0, 0), jump2);
-                    }
                 }
             }
         }
