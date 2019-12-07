@@ -94,7 +94,8 @@ public class Player : MonoBehaviour
             rb2d.velocity=Vector2.zero;
             playerState=State.unarmed;
             transform.position=new Vector2(startPosX, startPosY);
-            schinkenTimeCounter = schinkenTimeCounter = 0;
+            fridgeTimeCounter = schinkenTimeCounter = 0;
+            rb2d.constraints &= ~RigidbodyConstraints2D.FreezePositionX;
 
             freezeBar.localScale = new Vector3(Mathf.Clamp01(1 - fridgeTimeCounter / maxFridgeTime), 1, 1);
             schinkenBar.localScale = new Vector3(Mathf.Clamp01(1 - schinkenTimeCounter / maxSchinkenTime), 1, 1);
@@ -148,28 +149,29 @@ public class Player : MonoBehaviour
             move();
             jump();
             if(playerState==State.armed)
-                schinkenTimeCounter+=Time.deltaTime;
+                schinkenTimeCounter = Mathf.Min(schinkenTimeCounter + Time.deltaTime, maxSchinkenTime + 0.001F);
             else
-                schinkenTimeCounter-=Time.deltaTime;
+                schinkenTimeCounter = Mathf.Max(0, schinkenTimeCounter -= Time.deltaTime);
 
-            fridgeTimeCounter -= Time.deltaTime;
+            fridgeTimeCounter = Mathf.Max(0, fridgeTimeCounter - Time.deltaTime);
 
             foreach (TileBase b in floorTiles)
                 if (b == fire)
                 {
                     Reset();
-                    break;
+                    return;
                 }
         }
         else
         {
             rb2d.AddForce(Vector2.down * fridgeGrav);
 
-            fridgeTimeCounter+=Time.deltaTime;
-            schinkenTimeCounter-=Time.deltaTime;
-            if (fridgeTimeCounter>maxFridgeTime)
+            fridgeTimeCounter = Mathf.Min(fridgeTimeCounter + Time.deltaTime, maxFridgeTime + 0.001F);
+            schinkenTimeCounter = Mathf.Max(0, schinkenTimeCounter - Time.deltaTime);
+            if (fridgeTimeCounter>=maxFridgeTime)
             {
                 Reset();
+                return;
             }
             for (int i = 0; i < floorTiles.Length; ++i)
             {
