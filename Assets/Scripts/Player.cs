@@ -120,6 +120,9 @@ public class Player : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (Input.GetKeyDown(KeyCode.F1))
+            ScreenCapture.CaptureScreenshot(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Desktop) + "/Screenshot_" + (System.Environment.TickCount) + ".png");
+
         if (transform.position.y < -5)
             Reset();
 
