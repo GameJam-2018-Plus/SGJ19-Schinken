@@ -34,7 +34,7 @@ public class Player : MonoBehaviour
     public float jumpHeight, jumpTime;
     public float coyote;
 
-    private float timeCounter = 0;
+    private float timeCounter = 0;  
     private float fridgeTimeCounter = 0;
     [Range(0, 10)]
     public float maxFridgeTime=10;
@@ -45,12 +45,7 @@ public class Player : MonoBehaviour
     public float fridgeGrav = 70;
     private float startPosX, startPosY;
 
-    void move()
-    {
-        float move = Input.GetAxis("Horizontal") * speed;
-        Vector2 speedVec = new Vector2(move, 0);
-        rb2d.AddForce(speedVec);
-    }
+    private Vector2 vel;
 
     void jump()
     {
@@ -60,8 +55,7 @@ public class Player : MonoBehaviour
             lastOnGround = -100;
             jump = jumpForce;
         }
-        Vector2 jumpVec = new Vector2(0, jump);
-        rb2d.AddForce(jumpVec, ForceMode2D.Impulse);
+        vel += new Vector2(0, jump);
     }
 
     void OnCollisionEnter2D(Collision2D other)
@@ -91,11 +85,10 @@ public class Player : MonoBehaviour
         livesText.text = "" + lives;
         if (lives>0)
         {
-            rb2d.velocity=Vector2.zero;
+            vel=Vector2.zero;
             playerState=State.unarmed;
             transform.position=new Vector2(startPosX, startPosY);
             fridgeTimeCounter = schinkenTimeCounter = 0;
-            rb2d.constraints &= ~RigidbodyConstraints2D.FreezePositionX;
             lastOnGround = -100;
 
             freezeBar.localScale = new Vector3(Mathf.Clamp01(1 - fridgeTimeCounter / maxFridgeTime), 1, 1);
@@ -124,19 +117,20 @@ public class Player : MonoBehaviour
         }
         this.onGround = onGround;
         if (onGround)
+        {
+            vel.y = 0;
             this.lastOnGround = Time.time;
+        }
 
         if (Input.GetButtonDown("Fridge"))
         {
             if (playerState != State.fridge)
             {
                 playerState = State.fridge;
-                rb2d.constraints |= RigidbodyConstraints2D.FreezePositionX;
             }
             else
             {
                 playerState = State.unarmed;
-                rb2d.constraints &= ~RigidbodyConstraints2D.FreezePositionX;
             }
         }
         else if (Input.GetButtonDown("Schinken"))
@@ -149,7 +143,7 @@ public class Player : MonoBehaviour
 
         if (playerState != State.fridge)
         {
-            move();
+            vel.x = Input.GetAxis("Horizontal") * speed;
             jump();
             if(playerState==State.armed)
             {
@@ -171,7 +165,8 @@ public class Player : MonoBehaviour
         }
         else
         {
-            rb2d.AddForce(Vector2.down * fridgeGrav);
+            vel.x = 0;
+            vel += Vector2.down * fridgeGrav * Time.fixedDeltaTime;
 
             fridgeTimeCounter = Mathf.Min(fridgeTimeCounter + Time.deltaTime, maxFridgeTime + 0.001F);
             schinkenTimeCounter = Mathf.Max(0, schinkenTimeCounter - Time.deltaTime);
@@ -188,10 +183,13 @@ public class Player : MonoBehaviour
                     if (((AnimatedTile)b).tag.Equals("Destructible"))
                         map.SetTile(pos + new Vector3Int(i, 0, 0), null);
                     else if (((AnimatedTile)b).tag.Equals("Jump"))
-                        rb2d.AddForce(Vector3.up * 50);
+                        vel += Vector2.up * 50;
                 }
             }
         }
+
+        vel += Physics2D.gravity * Time.fixedDeltaTime;
+        rb2d.velocity = vel;
 
         freezeBar.localScale = new Vector3(Mathf.Clamp01(1 - fridgeTimeCounter / maxFridgeTime), 1, 1);
         schinkenBar.localScale = new Vector3(Mathf.Clamp01(1 - schinkenTimeCounter / maxSchinkenTime), 1, 1);
