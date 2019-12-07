@@ -1942,9 +1942,10 @@ GameObject:
   - component: {fileID: 540274689}
   - component: {fileID: 540274688}
   - component: {fileID: 540274687}
+  - component: {fileID: 540274690}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2075,8 +2076,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   map: {fileID: 31077978}
-  destructible: {fileID: 11400000, guid: cea12446c1419b24ea7e39d7e461c814, type: 2}
-  fire: {fileID: 11400000, guid: 2a058c5b4537cb54e86bbc60489afa2e, type: 2}
+  destructible: {fileID: 0}
+  fire: {fileID: 0}
   ground: {fileID: 1775109071}
   livesText: {fileID: 148087271}
   freezeBar: {fileID: 1867772776}
@@ -2088,6 +2089,18 @@ MonoBehaviour:
   maxFridgeTime: 10
   maxSchinkenTime: 10
   fridgeGrav: 80
+--- !u!114 &540274690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 540274684}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b31dfa8d9016da078b0604a96efef442, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &618529005
 GameObject:
   m_ObjectHideFlags: 0
