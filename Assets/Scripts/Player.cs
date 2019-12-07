@@ -72,6 +72,10 @@ public class Player : MonoBehaviour
             startPosX=transform.position.x;
             startPosY=transform.position.y;
         }
+        else if (other.tag.Equals("Poison"))
+        {
+            Reset();
+        }
     }
 
     // Start is called before the first frame update
