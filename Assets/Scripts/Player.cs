@@ -106,7 +106,7 @@ public class Player : MonoBehaviour
         lives--;
         livesText.text = "" + lives;
         if(playerState==State.fridge)
-            jumpPlateForce=jumpPlateForce/1.5f;
+            jumpPlateForce=jumpPlateForce/1.75f;
         if (lives>0)
         {
             vel=Vector2.zero;
@@ -158,12 +158,12 @@ public class Player : MonoBehaviour
             if (playerState != State.fridge)
             {
                 playerState = State.fridge;
-                jumpPlateForce=jumpPlateForce*1.5f;
+                jumpPlateForce=jumpPlateForce*1.75f;
             }
             else
             {
                 playerState = State.unarmed;
-                jumpPlateForce=jumpPlateForce/1.5f;
+                jumpPlateForce=jumpPlateForce/1.75f;
             }
         }
         else if (Input.GetButtonDown("Schinken"))
