@@ -15,6 +15,7 @@ public class Player : MonoBehaviour
 
     private CameraController cam;
     private bool onGround;
+    private float lastOnGround = -100;
 
     private int lives = 3;
     private Rigidbody2D rb2d;
@@ -30,6 +31,7 @@ public class Player : MonoBehaviour
     [Range(0, 10)]
     private float jumpForce = 7;
     public float jumpHeight, jumpTime;
+    public float coyote;
 
     private float timeCounter = 0;
 
@@ -53,8 +55,11 @@ public class Player : MonoBehaviour
     void jump()
     {
         float jump = 0;
-        if (onGround && Input.GetButtonDown("Jump"))
+        if (Time.time - lastOnGround < coyote && Input.GetButtonDown("Jump"))
+        {
+            lastOnGround = -100;
             jump = jumpForce;
+        }
         Vector2 jumpVec = new Vector2(0, jump);
         rb2d.AddForce(jumpVec, ForceMode2D.Impulse);
     }
@@ -91,6 +96,7 @@ public class Player : MonoBehaviour
             transform.position=new Vector2(startPosX, startPosY);
             fridgeTimeCounter = schinkenTimeCounter = 0;
             rb2d.constraints &= ~RigidbodyConstraints2D.FreezePositionX;
+            lastOnGround = -100;
 
             freezeBar.localScale = new Vector3(Mathf.Clamp01(1 - fridgeTimeCounter / maxFridgeTime), 1, 1);
             schinkenBar.localScale = new Vector3(Mathf.Clamp01(1 - schinkenTimeCounter / maxSchinkenTime), 1, 1);
@@ -117,6 +123,8 @@ public class Player : MonoBehaviour
             ground.Play();
         }
         this.onGround = onGround;
+        if (onGround)
+            this.lastOnGround = Time.time;
 
         if (Input.GetButtonDown("Fridge"))
         {

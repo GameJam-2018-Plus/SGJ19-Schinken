@@ -5,6 +5,8 @@ using UnityEngine;
 public class CameraController : MonoBehaviour
 {
     public Transform target;
+    public RectTransform hud;
+    public float yRange = 3;
     public float damping;
     public float shakeDuration;
 
@@ -26,12 +28,19 @@ public class CameraController : MonoBehaviour
 
     void Update()
     {
-        transform.position = new Vector3(Mathf.Lerp(transform.position.x, target.transform.position.x, damping), transform.position.y, transform.position.z);
+        transform.position = new Vector3(Mathf.Lerp(transform.position.x, target.transform.position.x, damping), transform.position.y + Mathf.Max(0, target.transform.position.y - transform.position.y - yRange) - Mathf.Max(0, transform.position.y - target.transform.position.y - yRange), transform.position.z);
 
         float x = (Time.time - shakeTime) / shakeDuration;
         if (x < 1)
-            cam.fieldOfView = fov - shakeStrength * Mathf.Sin(Mathf.Sqrt(x) * Mathf.PI) * (1 - x);
+        {
+            float shake = Mathf.Sin(Mathf.Sqrt(x) * Mathf.PI) * (1 - x);
+            cam.fieldOfView = fov - shakeStrength * shake;
+            hud.localScale = Vector3.one * (1 + shake * 0.01F);
+        }
         else
+        {
+            hud.localScale = Vector3.one;
             cam.fieldOfView = fov;
+        }
     }
 }
