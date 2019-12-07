@@ -17,6 +17,7 @@ public class Player : MonoBehaviour
     private bool onGround;
     private float lastOnGround = -100;
 
+    
     private int lives = 3;
     private Rigidbody2D rb2d;
     public enum State
@@ -34,7 +35,6 @@ public class Player : MonoBehaviour
     public float coyote;
 
     private float timeCounter = 0;
-
     private float fridgeTimeCounter = 0;
     [Range(0, 10)]
     public float maxFridgeTime=10;
@@ -152,11 +152,15 @@ public class Player : MonoBehaviour
             move();
             jump();
             if(playerState==State.armed)
-                schinkenTimeCounter = Mathf.Min(schinkenTimeCounter + Time.fixedDeltaTime, maxSchinkenTime + 0.001F);
+            {
+                schinkenTimeCounter = Mathf.Min(schinkenTimeCounter + Time.deltaTime, maxSchinkenTime + 0.001F);
+                if(schinkenTimeCounter>=maxSchinkenTime)
+                    playerState=State.unarmed;
+            }
             else
-                schinkenTimeCounter = Mathf.Max(0, schinkenTimeCounter -= Time.fixedDeltaTime);
+                schinkenTimeCounter = Mathf.Max(0, schinkenTimeCounter -= Time.deltaTime);
 
-            fridgeTimeCounter = Mathf.Max(0, fridgeTimeCounter - Time.fixedDeltaTime);
+            fridgeTimeCounter = Mathf.Max(0, fridgeTimeCounter - Time.deltaTime);
 
             foreach (TileBase b in floorTiles)
                 if (b is AnimatedTile && ((AnimatedTile) b).tag.Equals("Fire"))
@@ -169,8 +173,8 @@ public class Player : MonoBehaviour
         {
             rb2d.AddForce(Vector2.down * fridgeGrav);
 
-            fridgeTimeCounter = Mathf.Min(fridgeTimeCounter + Time.fixedDeltaTime, maxFridgeTime + 0.001F);
-            schinkenTimeCounter = Mathf.Max(0, schinkenTimeCounter - Time.fixedDeltaTime);
+            fridgeTimeCounter = Mathf.Min(fridgeTimeCounter + Time.deltaTime, maxFridgeTime + 0.001F);
+            schinkenTimeCounter = Mathf.Max(0, schinkenTimeCounter - Time.deltaTime);
             if (fridgeTimeCounter>=maxFridgeTime)
             {
                 Reset();

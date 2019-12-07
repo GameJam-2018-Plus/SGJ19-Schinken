@@ -13,7 +13,7 @@ public class EnemyMushroom : MonoBehaviour
 
     public void Death()
     {
-
+        Destroy(gameObject);
     }
     // Start is called before the first frame update
     void Start()
