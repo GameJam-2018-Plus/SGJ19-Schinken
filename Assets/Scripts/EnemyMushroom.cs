@@ -60,7 +60,10 @@ public class EnemyMushroom : MonoBehaviour
         {
             if(collision.gameObject.GetComponent<Player>().playerState==Player.State.fridge)
             {
-                Destroy(gameObject);
+                if(collision.gameObject.GetComponent<Player>().onGround==false)
+                {
+                    Destroy(gameObject);
+                }
             }
         }
         direction *= (-1);

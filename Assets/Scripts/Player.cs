@@ -14,7 +14,7 @@ public class Player : MonoBehaviour
     public RectTransform schinkenBar;
 
     private CameraController cam;
-    private bool onGround;
+    public bool onGround;
     private float lastOnGround = -100;
 
     
