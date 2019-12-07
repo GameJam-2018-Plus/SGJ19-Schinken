@@ -134,11 +134,11 @@ public class Player : MonoBehaviour
         if (transform.position.y < -5)
             Reset();
 
-        Vector3Int pos = Vector3Int.FloorToInt(transform.position + Vector3.Scale(new Vector3(-0.49F, -1.1F, 0), transform.localScale));
-        Vector3Int size = new Vector3Int(1 + Mathf.FloorToInt(transform.position.x + 0.49F * transform.localScale.x) - Mathf.FloorToInt(transform.position.x - 0.49F * transform.localScale.x), 1, 1);
+        Vector3Int pos = Vector3Int.FloorToInt(transform.position + Vector3.Scale(new Vector3(-0.24F, -1.2F, 0), transform.localScale));
+        Vector3Int size = new Vector3Int(1 + Mathf.FloorToInt(transform.position.x + 0.24F * transform.localScale.x) - Mathf.FloorToInt(transform.position.x - 0.24F * transform.localScale.x), 1, 1);
         TileBase[] floorTiles = map.GetTilesBlock(new BoundsInt(pos, size));
 
-        bool onGround = Physics2D.Raycast(new Vector2(rb2d.position.x, rb2d.position.y - 1.1f * transform.localScale.y), Vector2.down, 0.025F);
+        bool onGround = Physics2D.Raycast(new Vector2(rb2d.position.x, rb2d.position.y - 1.05F * transform.localScale.y), Vector2.down, 0.01F);
         if (onGround && !this.onGround)
         {
             cam.Shake();
@@ -180,7 +180,7 @@ public class Player : MonoBehaviour
 
             if (vel.x > 0.01F)
                 dir = 1;
-            else if (vel.x < 0.01F)
+            else if (vel.x < -0.01F)
                 dir = -1;
             anim.SetInteger("direction", dir);
             anim.SetFloat("speed", Mathf.Abs(vel.x));
