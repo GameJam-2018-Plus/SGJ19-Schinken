@@ -10,6 +10,11 @@ public class EnemyMushroom : MonoBehaviour
     private float minDist = -12.5f;
     private float movingSpeed = 10f;
     private int direction;
+
+    public void Death()
+    {
+
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -53,6 +58,4 @@ public class EnemyMushroom : MonoBehaviour
     {
         direction *= (-1);
     }
-
 }
-
