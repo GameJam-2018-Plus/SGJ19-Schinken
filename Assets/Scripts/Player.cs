@@ -28,7 +28,7 @@ public class Player : MonoBehaviour
     }
     public State playerState = State.unarmed;
     [Range(0, 20)]
-    public float speed = 15;
+    public float speed = 10;
     [Range(0, 10)]
     private float jumpForce = 7;
     public float jumpHeight, jumpTime;
