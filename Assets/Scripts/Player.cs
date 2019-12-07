@@ -108,18 +108,18 @@ public class Player : MonoBehaviour
         else if (Input.GetButtonDown("Schinken"))
         {
             if (playerState == State.armed)
-            {
                 playerState = State.unarmed;
-            }
-            else if (playerState != State.fridge)
-            {
+            else if (playerState != State.fridge&&schinkenTimeCounter<=0)
                 playerState = State.armed;
-            }
         }
         if (playerState != State.fridge)
         {
             move();
             jump();
+            if(playerState==State.armed)
+                schinkenTimeCounter+=Time.deltaTime;
+            else
+                schinkenTimeCounter-=Time.deltaTime;
 
             foreach (TileBase b in floorTiles)
                 if (b == fire)
@@ -131,6 +131,7 @@ public class Player : MonoBehaviour
         else
         {
             fridgeTimeCounter+=Time.deltaTime;
+            schinkenTimeCounter-=Time.deltaTime;
             if(fridgeTimeCounter>maxFridgeTime)
             {
                 Reset();
