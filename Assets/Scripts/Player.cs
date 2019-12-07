@@ -14,6 +14,8 @@ public class Player : MonoBehaviour
     public RectTransform schinkenBar;
     public Transform model;
 
+    public TileBase jump2;
+
     private CameraController cam;
     public bool onGround, inFlight;
     private float lastOnGround = -100, lastInAir = -100;
@@ -125,7 +127,7 @@ public class Player : MonoBehaviour
         Vector3Int size = new Vector3Int(1 + Mathf.FloorToInt(transform.position.x + 0.49F * transform.localScale.x) - Mathf.FloorToInt(transform.position.x - 0.49F * transform.localScale.x), 1, 1);
         TileBase[] floorTiles = map.GetTilesBlock(new BoundsInt(pos, size));
 
-        bool onGround = Physics2D.Raycast(new Vector2(rb2d.position.x, rb2d.position.y - 0.51f * transform.localScale.y), Vector2.down, 0.02F);
+        bool onGround = Physics2D.Raycast(new Vector2(rb2d.position.x, rb2d.position.y - 0.51f * transform.localScale.y), Vector2.down, 0.01F);
         if (onGround && !this.onGround)
         {
             cam.Shake();
@@ -174,14 +176,23 @@ public class Player : MonoBehaviour
 
             fridgeTimeCounter = Mathf.Max(0, fridgeTimeCounter - Time.deltaTime);
 
-            foreach (TileBase b in floorTiles)
-                if (b is AnimatedTile && ((AnimatedTile) b).tag.Equals("Fire"))
+            for (int i = 0; i < floorTiles.Length; ++i)
+            {
+                TileBase b = floorTiles[i];
+                if (b is AnimatedTile)
                 {
-                    Reset();
-                    return;
-                }
-                else if (b is AnimatedTile && ((AnimatedTile)b).tag.Equals("Jump"))
+                    if (((AnimatedTile)b).tag.Equals("Fire"))
+                    {
+                        Reset();
+                        return;
+                    }
+                    else if (((AnimatedTile)b).tag.Equals("Jump") && onGround && vel.y <= 0.0001F)
+                    {
                         vel += Vector2.up * jumpPlateForce;
+                        map.SetTile(pos + new Vector3Int(i, 0, 0), jump2);
+                    }
+                }
+            }
         }
         else
         {
@@ -203,8 +214,11 @@ public class Player : MonoBehaviour
                     if (((AnimatedTile)b).tag.Equals("Destructible")&&inFlight)
                         map.SetTile(pos + new Vector3Int(i, 0, 0), null);
 
-                    else if (((AnimatedTile)b).tag.Equals("Jump"))
+                    else if (((AnimatedTile)b).tag.Equals("Jump") && onGround && vel.y <= 0.0001F)
+                    {
                         vel += Vector2.up * jumpPlateForce;
+                        map.SetTile(pos + new Vector3Int(i, 0, 0), jump2);
+                    }
                 }
             }
         }
