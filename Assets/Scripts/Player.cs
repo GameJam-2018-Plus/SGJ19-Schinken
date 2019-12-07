@@ -55,9 +55,7 @@ public class Player : MonoBehaviour
     {
         float jump = 0;
         if (onGround && Input.GetButtonDown("Jump"))
-        {
             jump = jumpForce;
-        }
         Vector2 jumpVec = new Vector2(0, jump);
         rb2d.AddForce(jumpVec, ForceMode2D.Impulse);
     }
@@ -65,9 +63,7 @@ public class Player : MonoBehaviour
     void OnCollisionEnter2D(Collision2D other)
     {
         if(other.collider.tag.Equals("Enemy"))
-        {
             Reset();
-        }
     }
 
     // Start is called before the first frame update
