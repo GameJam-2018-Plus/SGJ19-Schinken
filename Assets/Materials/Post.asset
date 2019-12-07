@@ -1332,13 +1332,13 @@ MonoBehaviour:
     value: 0
   color:
     overrideState: 1
-    value: {r: 0.042274836, g: 0.08793168, b: 0.1792453, a: 1}
+    value: {r: 0.09433961, g: 0.0017799912, b: 0.04037257, a: 1}
   center:
     overrideState: 1
     value: {x: 0.5, y: 0.5}
   intensity:
     overrideState: 1
-    value: 0.42
+    value: 0.425
   smoothness:
     overrideState: 1
     value: 0.2
@@ -1392,7 +1392,7 @@ MonoBehaviour:
     value: 1
   threshold:
     overrideState: 1
-    value: 0.8
+    value: 0.7
   softKnee:
     overrideState: 1
     value: 0.4
