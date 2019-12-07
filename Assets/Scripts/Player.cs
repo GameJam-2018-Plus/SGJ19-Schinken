@@ -72,7 +72,7 @@ public class Player : MonoBehaviour
             startPosX=transform.position.x;
             startPosY=transform.position.y;
         }
-        else if (other.tag.Equals("Poison"))
+        else if (other.tag.Equals("Poison")&&playerState!=State.fridge)
         {
             Reset();
         }
