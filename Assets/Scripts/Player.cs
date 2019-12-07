@@ -65,6 +65,15 @@ public class Player : MonoBehaviour
             Reset();
     }
 
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.tag.Equals("Respawn"))
+        {
+            startPosX=transform.position.x;
+            startPosY=transform.position.y;
+        }
+    }
+
     // Start is called before the first frame update
     void Start()
     {
