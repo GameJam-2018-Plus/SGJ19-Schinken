@@ -1702,8 +1702,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c6624e206939264981cc973e2ac81b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  map: {fileID: 0}
+  destructible: {fileID: 0}
+  fire: {fileID: 0}
   speed: 15
   jumpForce: 7
+  maxFridgeTime: 10
+  maxSchinkenTime: 10
   fridgeGrav: 100
 --- !u!1 &909963002
 GameObject:

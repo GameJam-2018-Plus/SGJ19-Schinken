@@ -1,10 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.Tilemaps;
 
 public class Player : MonoBehaviour
 {
+    public Tilemap map;
+    public TileBase destructible, fire;
+
     private int lives = 3;
+    private Transform trans;
     private Rigidbody2D rb2d;
     private enum State
     {
@@ -17,9 +23,15 @@ public class Player : MonoBehaviour
     public float speed = 15;
     [Range(0, 10)]
     public float jumpForce = 7;
-    private float timeCounter = 0;
+    private float fridgeTimeCounter = 0;
+    [Range(0, 10)]
+    public float maxFridgeTime=10;
+    [Range(0, 10)]
+    public float maxSchinkenTime=10;
+    private float schinkenTimeCounter=0;
     [Range(0, 100)]
     public float fridgeGrav = 70;
+    private float startPosX, startPosY;
 
     void move()
     {
@@ -39,20 +51,54 @@ public class Player : MonoBehaviour
         rb2d.AddForce(jumpVec, ForceMode2D.Impulse);
     }
 
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        if(other.collider.tag.Equals("Enemy"))
+        {
+            Reset();
+        }
+    }
+
     // Start is called before the first frame update
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
         playerState = State.unarmed;
+        trans=GetComponent<Transform>();
+        startPosX=trans.position.x;
+        startPosY=trans.position.y;
+    }
+
+    void Reset()
+    {
+        lives--;
+        if(lives>0)
+        {
+            rb2d.velocity=Vector2.zero;
+            playerState=State.unarmed;
+            trans.position=new Vector2(startPosX, startPosY);
+        }
+        else{
+            SceneManager.LoadScene(2);
+        }
     }
 
     void FixedUpdate()
     {
+        if (transform.position.y < -5)
+            Reset();
+
+        Vector3Int pos = Vector3Int.FloorToInt(transform.position + Vector3.Scale(new Vector3(-0.49F, -0.6F, 0), transform.localScale));
+        Vector3Int size = new Vector3Int(1 + Mathf.FloorToInt(transform.position.x + 0.49F * transform.localScale.x) - Mathf.FloorToInt(transform.position.x - 0.49F * transform.localScale.x), 1, 1);
+        TileBase[] floorTiles = map.GetTilesBlock(new BoundsInt(pos, size));
+
         if (Input.GetButtonDown("Fridge"))
         {
             if (playerState != State.fridge)
             {
-                playerState = State.fridge;
+                playerState = State.fridge;                
+                rb2d.velocity = Vector2.zero;
+                rb2d.AddForce(Vector2.down * (-Physics2D.gravity) * fridgeGrav);
             }
             else
             {
@@ -74,11 +120,26 @@ public class Player : MonoBehaviour
         {
             move();
             jump();
+
+            foreach (TileBase b in floorTiles)
+                if (b == fire)
+                {
+                    Reset();
+                    break;
+                }
         }
         else
         {
-            rb2d.velocity = Vector2.zero;
-            rb2d.AddForce(Vector2.down * (-Physics2D.gravity) * fridgeGrav);
+            fridgeTimeCounter+=Time.deltaTime;
+            if(fridgeTimeCounter>maxFridgeTime)
+            {
+                Reset();
+            }
+            for (int i = 0; i < floorTiles.Length; ++i)
+            {
+               if (floorTiles[i] == destructible)
+                    map.SetTile(pos + new Vector3Int(i, 0, 0), null);
+            }
         }
     }
 }
