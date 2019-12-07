@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class BossBehaviour : MonoBehaviour
 {
+    private System.Random rand = new System.Random();
+
     //boss has different states
     public enum State
     {
@@ -19,29 +21,7 @@ public class BossBehaviour : MonoBehaviour
     void Start()
     {
         state = State.idle;
-        //StartCoroutine();
-    }
-
-
-
-    void FixedUpdate()
-    {
-        if (state == State.spores) //spore attac
-        {
-            SporeAttacking();
-        }
-        else if (state == State.root) //root attac
-        {
-            RootAttacking();
-        }
-        else if (state == State.shake) //earthquake attac
-        {
-            ShakeAttacking();
-        }
-        else //idle
-        {
-            Idle();
-        }
+        StartCoroutine(Idle());
     }
 
     void SporeAttacking()
@@ -49,26 +29,72 @@ public class BossBehaviour : MonoBehaviour
         Debug.Log("Spore animation");
         //do animation of attacking with spores
         //change after animation to 50 % idle, 25 % root, 25 % shake
+        int randNumber = rand.Next(0, 4); //rand int 0,1,2,3
+        switch (randNumber)
+        {
+            case 0:
+                ShakeAttacking();
+                break;
+            case 1:
+                RootAttacking();
+                break;
+            case 2:
+                StopAllCoroutines();
+                StartCoroutine(Idle());
+                break;
+            case 3:
+                StopAllCoroutines();
+                StartCoroutine(Idle());
+                break;
+        }
     }
     void RootAttacking()
     {
         Debug.Log("RootAttacking");
         //do animation of attacking with root
         //change after animation to 80 % idle, 10 % spore, 10 % shake
+
+        int randNumber = rand.Next(0, 11); //rand int 0,1,...,10
+        if (randNumber == 9)
+        {
+            ShakeAttacking();
+        }
+        else if (randNumber == 10)
+        {
+            SporeAttacking();
+        }
+        else
+        {
+            StopAllCoroutines();
+            StartCoroutine(Idle());
+        }
     }
     void ShakeAttacking()
     {
         Debug.Log("Earthquake!");
         //do animation of attacking with earthquake
         //change after animation to 80 % idle, 10 % root, 10 % spore
+        int randNumber = rand.Next(0, 11); //rand int 0,1,...,10
+        if (randNumber == 9)
+        {
+            RootAttacking();
+        }
+        else if (randNumber == 10)
+        {
+            SporeAttacking();
+        }
+        else
+        {
+            StopAllCoroutines();
+            StartCoroutine(Idle());
+        }
     }
     IEnumerator Idle()
     {
         Debug.Log("Idle");
         //wait for random seconds 
         yield return new WaitForSeconds(6);
-        System.Random rand = new System.Random();
-        int randNumber = rand.Next(0, 3); //rand int 0,1,2
+        int randNumber = rand.Next(0, 11);  //rand int 0,1,2
 
         //change after wait to 33% spore, 33% root, 33% shake
         switch (randNumber)
@@ -80,6 +106,9 @@ public class BossBehaviour : MonoBehaviour
                 RootAttacking();
                 break;
             case 2:
+                SporeAttacking();
+                break;
+            case 3:
                 SporeAttacking();
                 break;
         }
