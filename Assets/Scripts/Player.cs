@@ -69,6 +69,9 @@ public class Player : MonoBehaviour
     {
         if(other.tag.Equals("Respawn"))
         {
+            if (Mathf.Abs(startPosX - transform.position.x) > 2)
+                other.GetComponentInChildren<ParticleSystem>().Play();
+
             startPosX=transform.position.x;
             startPosY=transform.position.y;
         }
@@ -128,7 +131,7 @@ public class Player : MonoBehaviour
         Vector3Int size = new Vector3Int(1 + Mathf.FloorToInt(transform.position.x + 0.49F * transform.localScale.x) - Mathf.FloorToInt(transform.position.x - 0.49F * transform.localScale.x), 1, 1);
         TileBase[] floorTiles = map.GetTilesBlock(new BoundsInt(pos, size));
 
-        bool onGround = Physics2D.Raycast(new Vector2(rb2d.position.x, rb2d.position.y - 0.51f * transform.localScale.y), Vector2.down, 0.01F);
+        bool onGround = Physics2D.Raycast(new Vector2(rb2d.position.x, rb2d.position.y - 0.51f * transform.localScale.y), Vector2.down, 0.025F);
         if (onGround && !this.onGround)
         {
             cam.Shake();
