@@ -8,7 +8,6 @@ using UnityEngine.UI;
 public class Player : MonoBehaviour
 {
     public Tilemap map;
-    public TileBase destructible, fire;
     public ParticleSystem ground;
     public Text livesText;
     public RectTransform freezeBar;
@@ -175,8 +174,14 @@ public class Player : MonoBehaviour
             }
             for (int i = 0; i < floorTiles.Length; ++i)
             {
-               if (floorTiles[i] is AnimatedTile && ((AnimatedTile)floorTiles[i]).tag.Equals("Destructible"))
-                    map.SetTile(pos + new Vector3Int(i, 0, 0), null);
+               TileBase b = floorTiles[i];
+               if (b is AnimatedTile)
+               {
+                    if (((AnimatedTile)b).tag.Equals("Destructible"))
+                        map.SetTile(pos + new Vector3Int(i, 0, 0), null);
+                    else if (((AnimatedTile)b).tag.Equals("Jump"))
+                        rb2d.AddForce(Vector3.up * 50);
+                }
             }
         }
 
