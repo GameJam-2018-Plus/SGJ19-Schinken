@@ -1702,6 +1702,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c6624e206939264981cc973e2ac81b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  map: {fileID: 31077978}
+  destructible: {fileID: 11400000, guid: cea12446c1419b24ea7e39d7e461c814, type: 2}
+  fire: {fileID: 11400000, guid: 2a058c5b4537cb54e86bbc60489afa2e, type: 2}
   speed: 15
   jumpForce: 7
   maxFridgeTime: 10

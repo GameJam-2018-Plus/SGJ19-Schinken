@@ -2,9 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Tilemaps;
 
 public class Player : MonoBehaviour
 {
+    public Tilemap map;
+    public TileBase destructible, fire;
+
     private int lives = 3;
     private Transform trans;
     private Rigidbody2D rb2d;
@@ -81,6 +85,13 @@ public class Player : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (transform.position.y < -5)
+            Reset();
+
+        Vector3Int pos = Vector3Int.FloorToInt(transform.position + Vector3.Scale(new Vector3(-0.49F, -0.6F, 0), transform.localScale));
+        Vector3Int size = new Vector3Int(1 + Mathf.FloorToInt(transform.position.x + 0.49F * transform.localScale.x) - Mathf.FloorToInt(transform.position.x - 0.49F * transform.localScale.x), 1, 1);
+        TileBase[] floorTiles = map.GetTilesBlock(new BoundsInt(pos, size));
+
         if (Input.GetButtonDown("Fridge"))
         {
             if (playerState != State.fridge)
@@ -109,6 +120,13 @@ public class Player : MonoBehaviour
         {
             move();
             jump();
+
+            foreach (TileBase b in floorTiles)
+                if (b == fire)
+                {
+                    Reset();
+                    break;
+                }
         }
         else
         {
@@ -116,6 +134,11 @@ public class Player : MonoBehaviour
             if(fridgeTimeCounter>maxFridgeTime)
             {
                 Reset();
+            }
+            for (int i = 0; i < floorTiles.Length; ++i)
+            {
+               if (floorTiles[i] == destructible)
+                    map.SetTile(pos + new Vector3Int(i, 0, 0), null);
             }
         }
     }
