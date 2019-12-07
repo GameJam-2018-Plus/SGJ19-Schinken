@@ -176,7 +176,7 @@ public class Player : MonoBehaviour
                     Reset();
                     return;
                 }
-                else if (((AnimatedTile)b).tag.Equals("Jump"))
+                else if (b is AnimatedTile && ((AnimatedTile)b).tag.Equals("Jump"))
                         vel += Vector2.up * jumpPlateForce;
         }
         else
