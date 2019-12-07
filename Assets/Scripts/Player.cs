@@ -55,9 +55,7 @@ public class Player : MonoBehaviour
     {
         float jump = 0;
         if (onGround && Input.GetButtonDown("Jump"))
-        {
             jump = jumpForce;
-        }
         Vector2 jumpVec = new Vector2(0, jump);
         rb2d.AddForce(jumpVec, ForceMode2D.Impulse);
     }
@@ -65,9 +63,7 @@ public class Player : MonoBehaviour
     void OnCollisionEnter2D(Collision2D other)
     {
         if(other.collider.tag.Equals("Enemy"))
-        {
             Reset();
-        }
     }
 
     // Start is called before the first frame update
@@ -94,7 +90,8 @@ public class Player : MonoBehaviour
             rb2d.velocity=Vector2.zero;
             playerState=State.unarmed;
             transform.position=new Vector2(startPosX, startPosY);
-            schinkenTimeCounter = schinkenTimeCounter = 0;
+            fridgeTimeCounter = schinkenTimeCounter = 0;
+            rb2d.constraints &= ~RigidbodyConstraints2D.FreezePositionX;
 
             freezeBar.localScale = new Vector3(Mathf.Clamp01(1 - fridgeTimeCounter / maxFridgeTime), 1, 1);
             schinkenBar.localScale = new Vector3(Mathf.Clamp01(1 - schinkenTimeCounter / maxSchinkenTime), 1, 1);
@@ -148,32 +145,33 @@ public class Player : MonoBehaviour
             move();
             jump();
             if(playerState==State.armed)
-                schinkenTimeCounter+=Time.deltaTime;
+                schinkenTimeCounter = Mathf.Min(schinkenTimeCounter + Time.fixedDeltaTime, maxSchinkenTime + 0.001F);
             else
-                schinkenTimeCounter-=Time.deltaTime;
+                schinkenTimeCounter = Mathf.Max(0, schinkenTimeCounter -= Time.fixedDeltaTime);
 
-            fridgeTimeCounter -= Time.deltaTime;
+            fridgeTimeCounter = Mathf.Max(0, fridgeTimeCounter - Time.fixedDeltaTime);
 
             foreach (TileBase b in floorTiles)
-                if (b == fire)
+                if (b is AnimatedTile && ((AnimatedTile) b).tag.Equals("Fire"))
                 {
                     Reset();
-                    break;
+                    return;
                 }
         }
         else
         {
             rb2d.AddForce(Vector2.down * fridgeGrav);
 
-            fridgeTimeCounter+=Time.deltaTime;
-            schinkenTimeCounter-=Time.deltaTime;
-            if (fridgeTimeCounter>maxFridgeTime)
+            fridgeTimeCounter = Mathf.Min(fridgeTimeCounter + Time.fixedDeltaTime, maxFridgeTime + 0.001F);
+            schinkenTimeCounter = Mathf.Max(0, schinkenTimeCounter - Time.fixedDeltaTime);
+            if (fridgeTimeCounter>=maxFridgeTime)
             {
                 Reset();
+                return;
             }
             for (int i = 0; i < floorTiles.Length; ++i)
             {
-               if (floorTiles[i] == destructible)
+               if (floorTiles[i] is AnimatedTile && ((AnimatedTile)floorTiles[i]).tag.Equals("Destructible"))
                     map.SetTile(pos + new Vector3Int(i, 0, 0), null);
             }
         }
