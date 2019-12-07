@@ -12,10 +12,11 @@ public class Player : MonoBehaviour
     public Text livesText;
     public RectTransform freezeBar;
     public RectTransform schinkenBar;
+    public Transform model;
 
     private CameraController cam;
     public bool onGround;
-    private float lastOnGround = -100;
+    private float lastOnGround = -100, lastInAir = -100;
 
     
     private int lives = 3;
@@ -89,10 +90,12 @@ public class Player : MonoBehaviour
             playerState=State.unarmed;
             transform.position=new Vector2(startPosX, startPosY);
             fridgeTimeCounter = schinkenTimeCounter = 0;
-            lastOnGround = -100;
+            lastOnGround = lastInAir = -100;
 
             freezeBar.localScale = new Vector3(Mathf.Clamp01(1 - fridgeTimeCounter / maxFridgeTime), 1, 1);
             schinkenBar.localScale = new Vector3(Mathf.Clamp01(1 - schinkenTimeCounter / maxSchinkenTime), 1, 1);
+            model.localScale = Vector3.one;
+            model.localPosition = Vector3.zero;
         }
         else
         {
@@ -109,7 +112,7 @@ public class Player : MonoBehaviour
         Vector3Int size = new Vector3Int(1 + Mathf.FloorToInt(transform.position.x + 0.49F * transform.localScale.x) - Mathf.FloorToInt(transform.position.x - 0.49F * transform.localScale.x), 1, 1);
         TileBase[] floorTiles = map.GetTilesBlock(new BoundsInt(pos, size));
 
-        bool onGround = Physics2D.Raycast(new Vector2(rb2d.position.x, rb2d.position.y - 0.51f * transform.localScale.y), Vector2.down, 0.01F);
+        bool onGround = Physics2D.Raycast(new Vector2(rb2d.position.x, rb2d.position.y - 0.51f * transform.localScale.y), Vector2.down, 0.02F);
         if (onGround && !this.onGround)
         {
             cam.Shake();
@@ -121,6 +124,8 @@ public class Player : MonoBehaviour
             vel.y = 0;
             this.lastOnGround = Time.time;
         }
+        else
+            this.lastInAir = Time.time;
 
         if (Input.GetButtonDown("Fridge"))
         {
@@ -182,6 +187,7 @@ public class Player : MonoBehaviour
                {
                     if (((AnimatedTile)b).tag.Equals("Destructible"))
                         map.SetTile(pos + new Vector3Int(i, 0, 0), null);
+
                     else if (((AnimatedTile)b).tag.Equals("Jump"))
                         vel += Vector2.up * jumpPlateForce;
                 }
@@ -190,6 +196,10 @@ public class Player : MonoBehaviour
 
         vel += Physics2D.gravity * Time.fixedDeltaTime;
         rb2d.velocity = vel;
+        float squash = Mathf.Sin(Mathf.Clamp01((Time.time - lastInAir) / 0.2F) * Mathf.PI);
+        float stretch = onGround ? 0 : Mathf.Clamp01(1 - vel.y * vel.y / 500);
+        model.localScale = new Vector3(1 + 0.2F * squash - stretch * 0.2F, 1 - 0.2F * squash + stretch * 0.2F, 1);
+        model.localPosition = new Vector3(0, -0.11F * squash, 0);
 
         freezeBar.localScale = new Vector3(Mathf.Clamp01(1 - fridgeTimeCounter / maxFridgeTime), 1, 1);
         schinkenBar.localScale = new Vector3(Mathf.Clamp01(1 - schinkenTimeCounter / maxSchinkenTime), 1, 1);
