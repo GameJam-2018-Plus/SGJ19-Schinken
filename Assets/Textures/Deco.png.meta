@@ -29,6 +29,15 @@ TextureImporter:
   - first:
       213: 6643810134246320080
     second: Deco_8
+  - first:
+      213: -1284898304832744988
+    second: Deco_9
+  - first:
+      213: 417636639211244171
+    second: Deco_10
+  - first:
+      213: 7093290528135042042
+    second: Deco_11
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -139,7 +148,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 288c65fc518a8324d96cbe24797d6766
+      spriteID: 9d05d47b7662b5743818afaf027681be
       internalID: 225827243569481546
       vertices: []
       indices: 
@@ -160,7 +169,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e64e858852246ac49a7f83b67c6d8e86
+      spriteID: 041a80d263fd4ef478a1ae67d770fc91
       internalID: 1587376615870251227
       vertices: []
       indices: 
@@ -181,7 +190,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ae8a5b795e1748347bfc4d6e32366d3b
+      spriteID: f9cf4827d9328644291afdc09b27b988
       internalID: -7122632100217864554
       vertices: []
       indices: 
@@ -191,8 +200,8 @@ TextureImporter:
       name: Deco_3
       rect:
         serializedVersion: 2
-        x: 0
-        y: 64
+        x: 192
+        y: 128
         width: 64
         height: 64
       alignment: 0
@@ -202,7 +211,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 407aa18b2a28583469f02ab9502769bb
+      spriteID: 10b70a7406e957540a0f59c5354a33fa
       internalID: -909150851950172432
       vertices: []
       indices: 
@@ -212,6 +221,27 @@ TextureImporter:
       name: Deco_4
       rect:
         serializedVersion: 2
+        x: 0
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6173c1db2d815ef4dae08d188be17cab
+      internalID: 8614156189596622359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Deco_5
+      rect:
+        serializedVersion: 2
         x: 64
         y: 64
         width: 64
@@ -223,14 +253,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d0476c8e65d05c847893228b5594b930
-      internalID: 8614156189596622359
+      spriteID: 2ea2b2e5a7f9e65489fe201f8ecb5cc5
+      internalID: -4581511184564109199
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Deco_5
+      name: Deco_6
       rect:
         serializedVersion: 2
         x: 128
@@ -244,14 +274,35 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c090d088a92d47f4f9619397fcb2091c
-      internalID: -4581511184564109199
+      spriteID: 03c051ca9aa1e7848b3e73a7aed7c4fc
+      internalID: 4437205228131298863
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Deco_6
+      name: Deco_7
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11d0a29abcd034d4f9b8fa4803057896
+      internalID: -7852715024362624077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Deco_8
       rect:
         serializedVersion: 2
         x: 0
@@ -265,14 +316,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f4253b81ea3ae7b4c96abc883faae7ba
-      internalID: 4437205228131298863
+      spriteID: a4d7b7db4448f2b4a992cb1fc0986744
+      internalID: 6643810134246320080
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Deco_7
+      name: Deco_9
       rect:
         serializedVersion: 2
         x: 64
@@ -286,14 +337,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 01791a7959365a5469f3357f413e36d2
-      internalID: -7852715024362624077
+      spriteID: c516a7517ecc24a44a43c1851ff9fa58
+      internalID: -1284898304832744988
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Deco_8
+      name: Deco_10
       rect:
         serializedVersion: 2
         x: 128
@@ -307,8 +358,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bbdc83aea9e25274da87a30ece25f6ae
-      internalID: 6643810134246320080
+      spriteID: 8106cf5f8e629114dbf0ae9f171f6c21
+      internalID: 417636639211244171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Deco_11
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc15c8a262344aa4cb9ccf9f98153ea8
+      internalID: 7093290528135042042
       vertices: []
       indices: 
       edges: []
