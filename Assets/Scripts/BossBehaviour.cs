@@ -5,6 +5,9 @@ using UnityEngine;
 
 public class BossBehaviour : MonoBehaviour
 {
+
+    private Animator anim;
+    public Transform model; 
     private System.Random rand = new System.Random();
 
     //boss has different states
@@ -15,18 +18,21 @@ public class BossBehaviour : MonoBehaviour
         root,//track player
         shake //earthquake
     }
+    private State playerState;
 
-    private State state;
     // Start is called before the first frame update
     void Start()
     {
-        state = State.idle;
+        playerState = State.idle;
+        anim = model.GetComponentInChildren<Animator>();
         StartCoroutine(Idle());
     }
 
     void SporeAttacking()
     {
         Debug.Log("Spore animation");
+        playerState = State.spores;
+        anim.SetTrigger("spores");
         //do animation of attacking with spores
         //change after animation to 50 % idle, 25 % root, 25 % shake
         int randNumber = rand.Next(0, 4); //rand int 0,1,2,3
@@ -47,10 +53,13 @@ public class BossBehaviour : MonoBehaviour
                 StartCoroutine(Idle());
                 break;
         }
+        
     }
     void RootAttacking()
     {
         Debug.Log("RootAttacking");
+        playerState = State.root;
+        anim.SetTrigger("root");
         //do animation of attacking with root
         //change after animation to 80 % idle, 10 % spore, 10 % shake
 
@@ -72,6 +81,8 @@ public class BossBehaviour : MonoBehaviour
     void ShakeAttacking()
     {
         Debug.Log("Earthquake!");
+        playerState = State.shake;
+        anim.SetTrigger("earthquake");
         //do animation of attacking with earthquake
         //change after animation to 80 % idle, 10 % root, 10 % spore
         int randNumber = rand.Next(0, 11); //rand int 0,1,...,10
@@ -92,9 +103,10 @@ public class BossBehaviour : MonoBehaviour
     IEnumerator Idle()
     {
         Debug.Log("Idle");
+        anim.SetTrigger("idle");
         //wait for random seconds 
         yield return new WaitForSeconds(6);
-        int randNumber = rand.Next(0, 11);  //rand int 0,1,2
+        int randNumber = rand.Next(0, 3);  //rand int 0,1,2
 
         //change after wait to 33% spore, 33% root, 33% shake
         switch (randNumber)
