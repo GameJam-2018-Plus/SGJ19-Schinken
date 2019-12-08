@@ -22,7 +22,7 @@ public class Player : MonoBehaviour
     private float lastOnGround = -100, lastInAir = -100;
 
     
-    private int lives = 3;
+    private int lives = 5;
     private Rigidbody2D rb2d;
     public enum State
     {
