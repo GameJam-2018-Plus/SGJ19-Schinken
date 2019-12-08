@@ -66,8 +66,13 @@ public class Player : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D other)
     {
-        if(other.collider.tag.Equals("Enemy")&&playerState!=State.fridge)
-            Reset();
+        if(other.collider.tag.Equals("Enemy"))
+        {
+            if (playerState != State.fridge)
+                Reset();
+            else if ((Time.time - lastInAir) < 0.15F)
+                other.gameObject.GetComponent<EnemyMushroom>().Death();
+        }
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -142,6 +147,8 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Escape))
+            SceneManager.LoadScene(0);
 
         if (Input.GetButtonDown("Fridge"))
         {

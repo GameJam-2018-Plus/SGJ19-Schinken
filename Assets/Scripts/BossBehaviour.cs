@@ -74,7 +74,6 @@ public class BossBehaviour : MonoBehaviour
     }
     void RootAttacking()
     {
-        Debug.Log("RootAttacking");
         playerState = State.root;
         anim.SetTrigger("root");
         //do animation of attacking with root
@@ -97,7 +96,6 @@ public class BossBehaviour : MonoBehaviour
     }
     void ShakeAttacking()
     {
-        Debug.Log("Earthquake!");
         playerState = State.shake;
         anim.SetTrigger("earthquake");
         //do animation of attacking with earthquake
@@ -119,7 +117,6 @@ public class BossBehaviour : MonoBehaviour
     }
     IEnumerator Idle()
     {
-        Debug.Log("Idle");
         anim.SetTrigger("idle");
         //wait for random seconds 
         yield return new WaitForSeconds(6);
