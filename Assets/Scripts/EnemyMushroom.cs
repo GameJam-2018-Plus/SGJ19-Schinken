@@ -8,7 +8,7 @@ public class EnemyMushroom : MonoBehaviour
     private Transform enemy;
     public float maxDist = 5.5f;
     public float minDist = -5.5f;
-    private float movingSpeed = 5f;
+    public float movingSpeed = 5f;
     private int direction;
 
     public void Death()
