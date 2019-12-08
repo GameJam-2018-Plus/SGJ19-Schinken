@@ -1,61 +1,52 @@
 fileFormatVersion: 2
-guid: 214f68f23d33fd24393e3e417e22ba49
+guid: 22540b21caf58ad4c83128e41d17a62f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6524511480993150403
-    second: kyuiAttackLeft_0
+      213: 7554235837973909880
+    second: kyuiShroomWalkLeft_0
   - first:
-      213: 5200934913817062028
-    second: kyuiAttackLeft_1
+      213: -2427162160854405291
+    second: kyuiShroomWalkLeft_1
   - first:
-      213: -2724005817804693379
-    second: kyuiAttackLeft_2
+      213: 8945450373667665779
+    second: kyuiShroomWalkLeft_2
   - first:
-      213: 2178138255482848163
-    second: kyuiAttackLeft_3
+      213: 8739442113135719981
+    second: kyuiShroomWalkLeft_3
   - first:
-      213: -9065443182271759675
-    second: kyuiAttackLeft_4
+      213: -294967581699400126
+    second: kyuiShroomWalkLeft_4
   - first:
-      213: 3234390134601744874
-    second: kyuiAttackLeft_5
+      213: 8107011518777246
+    second: kyuiShroomWalkLeft_5
   - first:
-      213: 1431850651816264070
-    second: kyuiAttackLeft_6
+      213: 8229524374487397162
+    second: kyuiShroomWalkLeft_6
   - first:
-      213: -4405012371667969868
-    second: kyuiAttackLeft_7
+      213: 6771568658165767319
+    second: kyuiShroomWalkLeft_7
   - first:
-      213: 3905744329664988002
-    second: kyuiAttackLeft_8
+      213: 3847500257550109599
+    second: kyuiShroomWalkLeft_8
   - first:
-      213: 5752255085332035181
-    second: kyuiAttackLeft_9
+      213: -4572345179737204800
+    second: kyuiShroomWalkLeft_9
   - first:
-      213: 6748852990398851969
-    second: kyuiAttackLeft_10
+      213: -4320607315188963361
+    second: kyuiShroomWalkLeft_10
   - first:
-      213: 8248799433339591933
-    second: kyuiAttackLeft_11
+      213: 3106135622303702272
+    second: kyuiShroomWalkLeft_11
   - first:
-      213: -6549082114512908567
-    second: kyuiAttackLeft_12
+      213: -6184404052132370471
+    second: kyuiShroomWalkLeft_12
   - first:
-      213: -1248410593491200033
-    second: kyuiAttackLeft_13
+      213: -4499807161696889642
+    second: kyuiShroomWalkLeft_13
   - first:
-      213: 3216039593048480155
-    second: kyuiAttackLeft_14
-  - first:
-      213: -2084295515954902283
-    second: kyuiAttackLeft_15
-  - first:
-      213: 7496052204770299281
-    second: kyuiAttackLeft_16
-  - first:
-      213: 4205562846127953003
-    second: kyuiAttackLeft_17
+      213: 577764394122851937
+    second: kyuiShroomWalkLeft_14
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -152,13 +143,97 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: kyuiAttackLeft_0
+      name: kyuiShroomWalkLeft_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 768
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62c8758bf3a62274e9d934d81cac71bb
+      internalID: 7554235837973909880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kyuiShroomWalkLeft_1
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 768
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f666ecc9879c444fb2539bd82397e18
+      internalID: -2427162160854405291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kyuiShroomWalkLeft_2
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 768
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af9f2ba8db1ce044b99205b3c049a461
+      internalID: 8945450373667665779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kyuiShroomWalkLeft_3
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 768
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97c16ca48f3bb0c4fab2aae52d938bea
+      internalID: 8739442113135719981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kyuiShroomWalkLeft_4
       rect:
         serializedVersion: 2
         x: 0
         y: 512
-        width: 128
-        height: 128
+        width: 256
+        height: 256
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,41 +241,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5bef8267e415db4498da536bdacfc703
-      internalID: -6524511480993150403
+      spriteID: 07427488695aa5c4fba64db1e1992ee3
+      internalID: -294967581699400126
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: kyuiAttackLeft_1
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 512
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4cd88b137569f6f4bab5597d728ea4e0
-      internalID: 5200934913817062028
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: kyuiAttackLeft_2
+      name: kyuiShroomWalkLeft_5
       rect:
         serializedVersion: 2
         x: 256
         y: 512
-        width: 128
-        height: 128
+        width: 256
+        height: 256
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -208,20 +262,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 87644f17bcda15a4dbf95141cdb6a09e
-      internalID: -2724005817804693379
+      spriteID: 8804c3a360166b54e9e8266b24d83f18
+      internalID: 8107011518777246
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: kyuiAttackLeft_3
+      name: kyuiShroomWalkLeft_6
       rect:
         serializedVersion: 2
-        x: 384
+        x: 512
         y: 512
-        width: 128
-        height: 128
+        width: 256
+        height: 256
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -229,20 +283,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fef562f3fbee1934eaeeb86a9060fe3c
-      internalID: 2178138255482848163
+      spriteID: 327bfc4b95a5c4a44aed46575caf29d7
+      internalID: 8229524374487397162
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: kyuiAttackLeft_4
+      name: kyuiShroomWalkLeft_7
       rect:
         serializedVersion: 2
-        x: 0
-        y: 384
-        width: 128
-        height: 128
+        x: 768
+        y: 512
+        width: 256
+        height: 256
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -250,83 +304,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a10b7fab413e4cd4db60113d02c22d79
-      internalID: -9065443182271759675
+      spriteID: b357f24f4b43d43438770bf9e95fe388
+      internalID: 6771568658165767319
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: kyuiAttackLeft_5
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 384
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1e2e50f251b053c42900560c7b0567be
-      internalID: 3234390134601744874
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: kyuiAttackLeft_6
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 384
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 01ea87b061ff7484db4197d9eb12af73
-      internalID: 1431850651816264070
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: kyuiAttackLeft_7
-      rect:
-        serializedVersion: 2
-        x: 384
-        y: 384
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3f021c17f84a773479f43bfc01ccb175
-      internalID: -4405012371667969868
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: kyuiAttackLeft_8
+      name: kyuiShroomWalkLeft_8
       rect:
         serializedVersion: 2
         x: 0
         y: 256
-        width: 128
-        height: 128
+        width: 256
+        height: 256
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -334,41 +325,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 464060e0a43dbda47a8bfd243033a25c
-      internalID: 3905744329664988002
+      spriteID: 3b893456f23ac164ca635f2b6b1b663b
+      internalID: 3847500257550109599
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: kyuiAttackLeft_9
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 256
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 298ce56135063214c9b6ee9f5c86f9ad
-      internalID: 5752255085332035181
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: kyuiAttackLeft_10
+      name: kyuiShroomWalkLeft_9
       rect:
         serializedVersion: 2
         x: 256
         y: 256
-        width: 128
-        height: 128
+        width: 256
+        height: 256
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -376,20 +346,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: da129582df58edd438535cb37e4ccbc6
-      internalID: 6748852990398851969
+      spriteID: a15e2e5128aab4840ab315ae4e53a36b
+      internalID: -4572345179737204800
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: kyuiAttackLeft_11
+      name: kyuiShroomWalkLeft_10
       rect:
         serializedVersion: 2
-        x: 384
+        x: 512
         y: 256
-        width: 128
-        height: 128
+        width: 256
+        height: 256
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -397,20 +367,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 260a589670fdcee40a160b2832917489
-      internalID: 8248799433339591933
+      spriteID: 5b406731d00fd2a4cbd733b81e0cd3f1
+      internalID: -4320607315188963361
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: kyuiAttackLeft_12
+      name: kyuiShroomWalkLeft_11
       rect:
         serializedVersion: 2
-        x: 0
-        y: 128
-        width: 128
-        height: 128
+        x: 768
+        y: 256
+        width: 256
+        height: 256
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -418,83 +388,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 10507dd9fbe0ebe4c957616e82ccd4db
-      internalID: -6549082114512908567
+      spriteID: f1bb319d1b93c1c4bbd6b6f19d0d06da
+      internalID: 3106135622303702272
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: kyuiAttackLeft_13
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 128
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 713b5264bd4355b4e8d036dcb9a8b8ab
-      internalID: -1248410593491200033
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: kyuiAttackLeft_14
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 128
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4c2c045552ec6154cb9cfff48250e4dc
-      internalID: 3216039593048480155
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: kyuiAttackLeft_15
-      rect:
-        serializedVersion: 2
-        x: 384
-        y: 128
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c27f2549308f9c448b214cc4f9dbb20d
-      internalID: -2084295515954902283
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: kyuiAttackLeft_16
+      name: kyuiShroomWalkLeft_12
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 128
-        height: 128
+        width: 256
+        height: 256
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -502,20 +409,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6431eaafa0e9e3b47a3a829624dacca6
-      internalID: 7496052204770299281
+      spriteID: 2548fcd9b9d479c40aaa1d0fab31d8fd
+      internalID: -6184404052132370471
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: kyuiAttackLeft_17
+      name: kyuiShroomWalkLeft_13
       rect:
         serializedVersion: 2
-        x: 128
+        x: 256
         y: 0
-        width: 128
-        height: 128
+        width: 256
+        height: 256
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -523,8 +430,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 099bf56600de2534d808fded4409b666
-      internalID: 4205562846127953003
+      spriteID: e0d942abfb4abe14d8d71dfd1f677330
+      internalID: -4499807161696889642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kyuiShroomWalkLeft_14
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8382801ed3337c44387b3d9c330420c6
+      internalID: 577764394122851937
       vertices: []
       indices: 
       edges: []

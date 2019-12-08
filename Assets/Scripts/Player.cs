@@ -122,7 +122,7 @@ public class Player : MonoBehaviour
             model.localScale = Vector3.one;
             model.localPosition = Vector3.zero;
 
-            Instantiate(poof, new Vector3(startPosX, startPosY, 0) + gameObject.transform.position, Quaternion.identity, null);
+            Instantiate(poof, new Vector3(startPosX, startPosY, 0) + poof.transform.position, Quaternion.identity, null);
 
             cam.Cut();
             ground.Play();
@@ -133,7 +133,45 @@ public class Player : MonoBehaviour
         }
     }
 
-    void FixedUpdate()
+    private void Update()
+    {
+
+        if (Input.GetButtonDown("Fridge"))
+        {
+            if (playerState != State.fridge)
+            {
+                playerState = State.fridge;
+                jumpPlateForce = jumpPlateForce * 1.75f;
+            }
+            else
+            {
+                playerState = State.unarmed;
+                jumpPlateForce = jumpPlateForce / 1.75f;
+            }
+        }
+        else if (Input.GetButtonDown("Schinken"))
+        {
+            if (playerState == State.armed)
+                playerState = State.unarmed;
+            else if (playerState != State.fridge && schinkenTimeCounter <= 0)
+                playerState = State.armed;
+        }
+
+        if (playerState != State.fridge)
+        {
+            vel.x = Input.GetAxis("Horizontal") * speed;
+
+            if (vel.x > 0.01F)
+                dir = 1;
+            else if (vel.x < -0.01F)
+                dir = -1;
+        }
+
+        anim.SetInteger("direction", dir);
+        anim.SetFloat("speed", Mathf.Abs(vel.x));
+    }
+
+        void FixedUpdate()
     {
         if (Input.GetKeyDown(KeyCode.F1))
             ScreenCapture.CaptureScreenshot(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Desktop) + "/Screenshot_" + (System.Environment.TickCount) + ".png");
@@ -161,36 +199,8 @@ public class Player : MonoBehaviour
         else
             this.lastInAir = Time.time;
 
-        if (Input.GetButtonDown("Fridge"))
-        {
-            if (playerState != State.fridge)
-            {
-                playerState = State.fridge;
-                jumpPlateForce=jumpPlateForce*1.75f;
-            }
-            else
-            {
-                playerState = State.unarmed;
-                jumpPlateForce=jumpPlateForce/1.75f;
-            }
-        }
-        else if (Input.GetButtonDown("Schinken"))
-        {
-            if (playerState == State.armed)
-                playerState = State.unarmed;
-            else if (playerState != State.fridge&&schinkenTimeCounter<=0)
-                playerState = State.armed;
-        }
-
         if (playerState != State.fridge)
         {
-            vel.x = Input.GetAxis("Horizontal") * speed;
-
-            if (vel.x > 0.01F)
-                dir = 1;
-            else if (vel.x < -0.01F)
-                dir = -1;
-
             jump();
             if(playerState==State.armed)
             {
@@ -252,14 +262,12 @@ public class Player : MonoBehaviour
         float squash = Mathf.Sin(x * Mathf.PI) * (1 - x);
         float stretch = onGround ? 0 : Mathf.Clamp01(1 - vel.y * vel.y / 500) * (1 - squash) * Mathf.Clamp01((Time.time - lastOnGround) / 0.5F);
         model.localScale = new Vector3(1 + 0.15F * squash - stretch * 0.1F, 1 - 0.15F * squash + stretch * 0.1F, 1) * 2;
-        model.localPosition = new Vector3(0, -0.06F * squash, 0);
+        model.localPosition = new Vector3(0, -0.52F * 0.15F * squash, 0);
 
         freezeBar.localScale = new Vector3(Mathf.Clamp01(1 - fridgeTimeCounter / maxFridgeTime), 1, 1);
         schinkenBar.localScale = new Vector3(Mathf.Clamp01(1 - schinkenTimeCounter / maxSchinkenTime), 1, 1);
 
         anim.SetBool("onGround", onGround);
-        anim.SetInteger("direction", dir);
-        anim.SetFloat("speed", Mathf.Abs(vel.x));
         if (onGround==true)
             inFlight=false;
         else

@@ -1,61 +1,40 @@
 fileFormatVersion: 2
-guid: 214f68f23d33fd24393e3e417e22ba49
+guid: 4bf587c4fd6bfe14297d4c797006232d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6524511480993150403
-    second: kyuiAttackLeft_0
+      213: -3596643157651246047
+    second: kyuiGetSchinkenRight_0
   - first:
-      213: 5200934913817062028
-    second: kyuiAttackLeft_1
+      213: -7766863082729068817
+    second: kyuiGetSchinkenRight_1
   - first:
-      213: -2724005817804693379
-    second: kyuiAttackLeft_2
+      213: 1320494383210962549
+    second: kyuiGetSchinkenRight_2
   - first:
-      213: 2178138255482848163
-    second: kyuiAttackLeft_3
+      213: 6214082864084735120
+    second: kyuiGetSchinkenRight_3
   - first:
-      213: -9065443182271759675
-    second: kyuiAttackLeft_4
+      213: -210789222528499889
+    second: kyuiGetSchinkenRight_4
   - first:
-      213: 3234390134601744874
-    second: kyuiAttackLeft_5
+      213: 812721590712500119
+    second: kyuiGetSchinkenRight_5
   - first:
-      213: 1431850651816264070
-    second: kyuiAttackLeft_6
+      213: -7885787348350796809
+    second: kyuiGetSchinkenRight_6
   - first:
-      213: -4405012371667969868
-    second: kyuiAttackLeft_7
+      213: -4554756403068637735
+    second: kyuiGetSchinkenRight_7
   - first:
-      213: 3905744329664988002
-    second: kyuiAttackLeft_8
+      213: -5493700780595015329
+    second: kyuiGetSchinkenRight_8
   - first:
-      213: 5752255085332035181
-    second: kyuiAttackLeft_9
+      213: -4982352832237900307
+    second: kyuiGetSchinkenRight_9
   - first:
-      213: 6748852990398851969
-    second: kyuiAttackLeft_10
-  - first:
-      213: 8248799433339591933
-    second: kyuiAttackLeft_11
-  - first:
-      213: -6549082114512908567
-    second: kyuiAttackLeft_12
-  - first:
-      213: -1248410593491200033
-    second: kyuiAttackLeft_13
-  - first:
-      213: 3216039593048480155
-    second: kyuiAttackLeft_14
-  - first:
-      213: -2084295515954902283
-    second: kyuiAttackLeft_15
-  - first:
-      213: 7496052204770299281
-    second: kyuiAttackLeft_16
-  - first:
-      213: 4205562846127953003
-    second: kyuiAttackLeft_17
+      213: -3411299076432700860
+    second: kyuiGetSchinkenRight_10
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -152,175 +131,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: kyuiAttackLeft_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 512
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5bef8267e415db4498da536bdacfc703
-      internalID: -6524511480993150403
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: kyuiAttackLeft_1
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 512
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4cd88b137569f6f4bab5597d728ea4e0
-      internalID: 5200934913817062028
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: kyuiAttackLeft_2
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 512
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 87644f17bcda15a4dbf95141cdb6a09e
-      internalID: -2724005817804693379
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: kyuiAttackLeft_3
-      rect:
-        serializedVersion: 2
-        x: 384
-        y: 512
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fef562f3fbee1934eaeeb86a9060fe3c
-      internalID: 2178138255482848163
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: kyuiAttackLeft_4
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 384
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a10b7fab413e4cd4db60113d02c22d79
-      internalID: -9065443182271759675
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: kyuiAttackLeft_5
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 384
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1e2e50f251b053c42900560c7b0567be
-      internalID: 3234390134601744874
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: kyuiAttackLeft_6
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 384
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 01ea87b061ff7484db4197d9eb12af73
-      internalID: 1431850651816264070
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: kyuiAttackLeft_7
-      rect:
-        serializedVersion: 2
-        x: 384
-        y: 384
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3f021c17f84a773479f43bfc01ccb175
-      internalID: -4405012371667969868
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: kyuiAttackLeft_8
+      name: kyuiGetSchinkenRight_0
       rect:
         serializedVersion: 2
         x: 0
@@ -334,14 +145,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 464060e0a43dbda47a8bfd243033a25c
-      internalID: 3905744329664988002
+      spriteID: fe54b9cdb01efee4e9f2804d9f6bce94
+      internalID: -3596643157651246047
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: kyuiAttackLeft_9
+      name: kyuiGetSchinkenRight_1
       rect:
         serializedVersion: 2
         x: 128
@@ -355,14 +166,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 298ce56135063214c9b6ee9f5c86f9ad
-      internalID: 5752255085332035181
+      spriteID: ea666f6e2b6a0e24387f863b1ebc21c1
+      internalID: -7766863082729068817
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: kyuiAttackLeft_10
+      name: kyuiGetSchinkenRight_2
       rect:
         serializedVersion: 2
         x: 256
@@ -376,14 +187,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: da129582df58edd438535cb37e4ccbc6
-      internalID: 6748852990398851969
+      spriteID: 306d76d9a1959f44791aa865578d188f
+      internalID: 1320494383210962549
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: kyuiAttackLeft_11
+      name: kyuiGetSchinkenRight_3
       rect:
         serializedVersion: 2
         x: 384
@@ -397,14 +208,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 260a589670fdcee40a160b2832917489
-      internalID: 8248799433339591933
+      spriteID: 4a4d2354ebb7bd04da510489f4565db6
+      internalID: 6214082864084735120
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: kyuiAttackLeft_12
+      name: kyuiGetSchinkenRight_4
       rect:
         serializedVersion: 2
         x: 0
@@ -418,14 +229,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 10507dd9fbe0ebe4c957616e82ccd4db
-      internalID: -6549082114512908567
+      spriteID: db3a6027b91896f46bd619dd486c7cd5
+      internalID: -210789222528499889
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: kyuiAttackLeft_13
+      name: kyuiGetSchinkenRight_5
       rect:
         serializedVersion: 2
         x: 128
@@ -439,14 +250,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 713b5264bd4355b4e8d036dcb9a8b8ab
-      internalID: -1248410593491200033
+      spriteID: a8e8acdd84a1a7641b712553d8ad967c
+      internalID: 812721590712500119
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: kyuiAttackLeft_14
+      name: kyuiGetSchinkenRight_6
       rect:
         serializedVersion: 2
         x: 256
@@ -460,14 +271,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4c2c045552ec6154cb9cfff48250e4dc
-      internalID: 3216039593048480155
+      spriteID: 391f6105bcea8ae4fa34a218e92b1713
+      internalID: -7885787348350796809
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: kyuiAttackLeft_15
+      name: kyuiGetSchinkenRight_7
       rect:
         serializedVersion: 2
         x: 384
@@ -481,14 +292,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c27f2549308f9c448b214cc4f9dbb20d
-      internalID: -2084295515954902283
+      spriteID: 619cffde91f09e74d9b75dd8da31eae4
+      internalID: -4554756403068637735
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: kyuiAttackLeft_16
+      name: kyuiGetSchinkenRight_8
       rect:
         serializedVersion: 2
         x: 0
@@ -502,14 +313,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6431eaafa0e9e3b47a3a829624dacca6
-      internalID: 7496052204770299281
+      spriteID: 6976db2709e0a1046b47e206ce8a2e5f
+      internalID: -5493700780595015329
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: kyuiAttackLeft_17
+      name: kyuiGetSchinkenRight_9
       rect:
         serializedVersion: 2
         x: 128
@@ -523,8 +334,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 099bf56600de2534d808fded4409b666
-      internalID: 4205562846127953003
+      spriteID: f5cf70cf918d3d74fb4c120aab8f3f0b
+      internalID: -4982352832237900307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kyuiGetSchinkenRight_10
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b46266e1a7ee9c94999f28b47229e8bf
+      internalID: -3411299076432700860
       vertices: []
       indices: 
       edges: []

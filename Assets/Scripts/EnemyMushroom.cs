@@ -11,16 +11,19 @@ public class EnemyMushroom : MonoBehaviour
     public float movingSpeed = 5f;
     private int direction;
     public GameObject poof;
+    private Animator anim;
 
     public void Death()
     {
         Destroy(gameObject);
+        Instantiate(poof, transform.position + poof.transform.position, Quaternion.identity, null);
     }
     // Start is called before the first frame update
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
         enemy = GetComponent<Transform>();
+        anim = GetComponentInChildren<Animator>();
         maxDist += enemy.position.x;
         minDist += enemy.position.x;
         direction = -1;
@@ -53,6 +56,7 @@ public class EnemyMushroom : MonoBehaviour
                 }
                 break;
         }
+        anim.SetBool("right", direction == 1);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -63,7 +67,7 @@ public class EnemyMushroom : MonoBehaviour
             {
                 if(collision.gameObject.GetComponent<Player>().onGround==false)
                 {
-                    Instantiate(poof, transform.position + gameObject.transform.position, Quaternion.identity, null);
+                    Instantiate(poof, transform.position + poof.transform.position, Quaternion.identity, null);
                     Destroy(gameObject);
                 }
             }
