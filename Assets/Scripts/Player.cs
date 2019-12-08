@@ -13,6 +13,7 @@ public class Player : MonoBehaviour
     public RectTransform freezeBar;
     public RectTransform schinkenBar;
     public Transform model;
+    public GameObject poof;
     private Animator anim;
     private int dir = 1;
 
@@ -109,6 +110,7 @@ public class Player : MonoBehaviour
             jumpPlateForce=jumpPlateForce/1.5f;
         if (lives>0)
         {
+            dir = 1;
             vel=Vector2.zero;
             playerState=State.unarmed;
             transform.position=new Vector2(startPosX, startPosY);
@@ -119,6 +121,11 @@ public class Player : MonoBehaviour
             schinkenBar.localScale = new Vector3(Mathf.Clamp01(1 - schinkenTimeCounter / maxSchinkenTime), 1, 1);
             model.localScale = Vector3.one;
             model.localPosition = Vector3.zero;
+
+            Instantiate(poof, new Vector3(startPosX, startPosY, 0) + gameObject.transform.position, Quaternion.identity, null);
+
+            cam.Cut();
+            ground.Play();
         }
         else
         {
@@ -134,11 +141,12 @@ public class Player : MonoBehaviour
         if (transform.position.y < -5)
             Reset();
 
-        Vector3Int pos = Vector3Int.FloorToInt(transform.position + Vector3.Scale(new Vector3(-0.24F, -1.2F, 0), transform.localScale));
-        Vector3Int size = new Vector3Int(1 + Mathf.FloorToInt(transform.position.x + 0.24F * transform.localScale.x) - Mathf.FloorToInt(transform.position.x - 0.24F * transform.localScale.x), 1, 1);
+        Vector3Int pos = Vector3Int.FloorToInt(transform.position + Vector3.Scale(new Vector3(-0.49F, -1.2F, 0), transform.localScale));
+        Vector3Int size = new Vector3Int(1 + Mathf.FloorToInt(transform.position.x + 0.49F * transform.localScale.x) - Mathf.FloorToInt(transform.position.x - 0.49F * transform.localScale.x), 1, 1);
         TileBase[] floorTiles = map.GetTilesBlock(new BoundsInt(pos, size));
 
-        bool onGround = Physics2D.Raycast(new Vector2(rb2d.position.x, rb2d.position.y - 1.05F * transform.localScale.y), Vector2.down, 0.01F);
+        bool onGround = Physics2D.Raycast(new Vector2(rb2d.position.x, rb2d.position.y - 1.05F * transform.localScale.y), Vector2.down, 0.02F);
+
         if (onGround && !this.onGround)
         {
             cam.Shake();
@@ -182,8 +190,6 @@ public class Player : MonoBehaviour
                 dir = 1;
             else if (vel.x < -0.01F)
                 dir = -1;
-            anim.SetInteger("direction", dir);
-            anim.SetFloat("speed", Mathf.Abs(vel.x));
 
             jump();
             if(playerState==State.armed)
@@ -230,8 +236,10 @@ public class Player : MonoBehaviour
                if (b is AnimatedTile)
                {
                     if (((AnimatedTile)b).tag.Equals("Destructible")&&inFlight)
+                    {
+                        ground.Play();
                         map.SetTile(pos + new Vector3Int(i, 0, 0), null);
-
+                    }
                     else if (((AnimatedTile)b).tag.Equals("Jump") && onGround && vel.y <= 0.0001F)
                         vel += Vector2.up * jumpPlateForce;
                 }
@@ -243,13 +251,16 @@ public class Player : MonoBehaviour
         float x = Mathf.Clamp01((Time.time - lastInAir) / 0.2F);
         float squash = Mathf.Sin(x * Mathf.PI) * (1 - x);
         float stretch = onGround ? 0 : Mathf.Clamp01(1 - vel.y * vel.y / 500) * (1 - squash) * Mathf.Clamp01((Time.time - lastOnGround) / 0.5F);
-        model.localScale = new Vector3(1 + 0.1F * squash - stretch * 0.1F, 1 - 0.1F * squash + stretch * 0.1F, 1) * 2;
+        model.localScale = new Vector3(1 + 0.15F * squash - stretch * 0.1F, 1 - 0.15F * squash + stretch * 0.1F, 1) * 2;
         model.localPosition = new Vector3(0, -0.06F * squash, 0);
 
         freezeBar.localScale = new Vector3(Mathf.Clamp01(1 - fridgeTimeCounter / maxFridgeTime), 1, 1);
         schinkenBar.localScale = new Vector3(Mathf.Clamp01(1 - schinkenTimeCounter / maxSchinkenTime), 1, 1);
 
-        if(onGround==true)
+        anim.SetBool("onGround", onGround);
+        anim.SetInteger("direction", dir);
+        anim.SetFloat("speed", Mathf.Abs(vel.x));
+        if (onGround==true)
             inFlight=false;
         else
             inFlight=true;

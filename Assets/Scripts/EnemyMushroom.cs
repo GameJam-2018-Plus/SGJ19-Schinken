@@ -10,6 +10,7 @@ public class EnemyMushroom : MonoBehaviour
     public float minDist = -5.5f;
     private float movingSpeed = 5f;
     private int direction;
+    public GameObject poof;
 
     public void Death()
     {
@@ -62,6 +63,7 @@ public class EnemyMushroom : MonoBehaviour
             {
                 if(collision.gameObject.GetComponent<Player>().onGround==false)
                 {
+                    Instantiate(poof, transform.position + gameObject.transform.position, Quaternion.identity, null);
                     Destroy(gameObject);
                 }
             }

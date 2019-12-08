@@ -27,6 +27,11 @@ public class CameraController : MonoBehaviour
         shakeTime = Time.time;
     }
 
+    public void Cut()
+    {
+        transform.position = new Vector3(target.transform.position.x + offset.x, target.transform.position.y + offset.y, transform.position.z);
+    }
+
     void Update()
     {
         //transform.position = new Vector3(target.transform.position.x, target.transform.position.y, -8);
