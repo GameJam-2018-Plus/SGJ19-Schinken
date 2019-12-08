@@ -142,12 +142,15 @@ public class Player : MonoBehaviour
             {
                 playerState = State.fridge;
                 jumpPlateForce = jumpPlateForce * 1.75f;
+                anim.SetTrigger("enterFridge");
             }
             else
             {
                 playerState = State.unarmed;
                 jumpPlateForce = jumpPlateForce / 1.75f;
             }
+
+            anim.SetBool("fridge", playerState == State.fridge);
         }
         else if (Input.GetButtonDown("Schinken"))
         {
@@ -155,6 +158,8 @@ public class Player : MonoBehaviour
                 playerState = State.unarmed;
             else if (playerState != State.fridge && schinkenTimeCounter <= 0)
                 playerState = State.armed;
+
+            anim.SetBool("schinken", playerState == State.armed);
         }
 
         if (playerState != State.fridge)
@@ -245,7 +250,7 @@ public class Player : MonoBehaviour
                TileBase b = floorTiles[i];
                if (b is AnimatedTile)
                {
-                    if (((AnimatedTile)b).tag.Equals("Destructible")&&inFlight)
+                    if (((AnimatedTile)b).tag.Equals("Destructible")&& (Time.time - lastInAir) < 0.15F)
                     {
                         ground.Play();
                         map.SetTile(pos + new Vector3Int(i, 0, 0), null);
@@ -262,7 +267,7 @@ public class Player : MonoBehaviour
         float squash = Mathf.Sin(x * Mathf.PI) * (1 - x);
         float stretch = onGround ? 0 : Mathf.Clamp01(1 - vel.y * vel.y / 500) * (1 - squash) * Mathf.Clamp01((Time.time - lastOnGround) / 0.5F);
         model.localScale = new Vector3(1 + 0.15F * squash - stretch * 0.1F, 1 - 0.15F * squash + stretch * 0.1F, 1) * 2;
-        model.localPosition = new Vector3(0, -0.52F * 0.15F * squash, 0);
+        //model.localPosition = new Vector3(0, -0.52F * 0.15F * squash, 0);
 
         freezeBar.localScale = new Vector3(Mathf.Clamp01(1 - fridgeTimeCounter / maxFridgeTime), 1, 1);
         schinkenBar.localScale = new Vector3(Mathf.Clamp01(1 - schinkenTimeCounter / maxSchinkenTime), 1, 1);

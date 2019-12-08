@@ -135,17 +135,17 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 256
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        y: 512
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fdbd12378c267f14b95caaa8cde57717
+      spriteID: 30a06eed92417bc418002a19ef0c14df
       internalID: 8334706477562599259
       vertices: []
       indices: 
@@ -155,18 +155,18 @@ TextureImporter:
       name: kyuiGetSchinkenLeft_1
       rect:
         serializedVersion: 2
-        x: 128
-        y: 256
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 256
+        y: 512
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 09fe561369bf35b4795b745674114cc2
+      spriteID: bfd192a50222eaa40b1e1e9898a3ae20
       internalID: 1088586541633192691
       vertices: []
       indices: 
@@ -176,18 +176,18 @@ TextureImporter:
       name: kyuiGetSchinkenLeft_2
       rect:
         serializedVersion: 2
-        x: 256
-        y: 256
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 512
+        y: 512
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f36f16f8fc3e97b4388ce3f2df685503
+      spriteID: 63a7d23eaf025d644b5d774853b01a49
       internalID: 5368402586727443600
       vertices: []
       indices: 
@@ -197,18 +197,18 @@ TextureImporter:
       name: kyuiGetSchinkenLeft_3
       rect:
         serializedVersion: 2
-        x: 384
-        y: 256
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 768
+        y: 512
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 70fb778ed52bbf145bf5a0e9681b18e2
+      spriteID: 6857f1b55169e0a45ba4e0e3159cb2f0
       internalID: -3536871583505923891
       vertices: []
       indices: 
@@ -219,17 +219,17 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 128
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        y: 256
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6d8a8937c374dd04aa7fcb4a37e4147c
+      spriteID: 885ee367ce8cb6f47a69f2066dd14f9c
       internalID: 646555735918828731
       vertices: []
       indices: 
@@ -239,18 +239,18 @@ TextureImporter:
       name: kyuiGetSchinkenLeft_5
       rect:
         serializedVersion: 2
-        x: 128
-        y: 128
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 256
+        y: 256
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d00fba09e3259134c89d1ca8c5844dda
+      spriteID: 8fe43249aeac90a40a77014ead15b443
       internalID: -1798862253339256105
       vertices: []
       indices: 
@@ -260,18 +260,18 @@ TextureImporter:
       name: kyuiGetSchinkenLeft_6
       rect:
         serializedVersion: 2
-        x: 256
-        y: 128
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 512
+        y: 256
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 33f5f73aab15bf74ea9c49ea34df6fb6
+      spriteID: d397e2d79946ef44eba23520e85ca904
       internalID: -3737632015852879590
       vertices: []
       indices: 
@@ -281,18 +281,18 @@ TextureImporter:
       name: kyuiGetSchinkenLeft_7
       rect:
         serializedVersion: 2
-        x: 384
-        y: 128
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 768
+        y: 256
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: afef5dee36e9960458752b53b17a6a62
+      spriteID: 44e90091d004beb418d008c64c39c0a9
       internalID: 7557389810976788518
       vertices: []
       indices: 
@@ -304,16 +304,16 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3cbf8bb14c70a22438f1925bb7b85372
+      spriteID: 7a7b9cd4ddb779f4ba08ef11321d17ee
       internalID: -4692126531498288845
       vertices: []
       indices: 
@@ -323,18 +323,18 @@ TextureImporter:
       name: kyuiGetSchinkenLeft_9
       rect:
         serializedVersion: 2
-        x: 128
+        x: 256
         y: 0
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 061c2d8029f65e641bfa36de664404f3
+      spriteID: 9ac0d8044acbf5241ba53fdc2d51d620
       internalID: 6417521100557357966
       vertices: []
       indices: 
@@ -344,18 +344,18 @@ TextureImporter:
       name: kyuiGetSchinkenLeft_10
       rect:
         serializedVersion: 2
-        x: 256
+        x: 512
         y: 0
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 88dffa75a71a46346a3a3834b7a3af24
+      spriteID: d61dd63634bad6d4a9365210142543f1
       internalID: 8796202521971248140
       vertices: []
       indices: 
