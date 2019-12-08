@@ -45,7 +45,7 @@ public class Player : MonoBehaviour
     [Range(0, 150)]
     public float fridgeGrav = 70;
     [Range(0,50)]
-    public float jumpPlateForce=50;
+    public float jumpPlateForce=40;
     private float startPosX, startPosY;
 
     private Vector2 vel;
@@ -98,7 +98,7 @@ public class Player : MonoBehaviour
         startPosX=transform.position.x;
         startPosY=transform.position.y;
 
-        jumpPlateForce=50; //Hardcoded value.
+        jumpPlateForce=40; //Hardcoded value.
     }
 
     void Reset()

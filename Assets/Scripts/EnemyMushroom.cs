@@ -21,7 +21,7 @@ public class EnemyMushroom : MonoBehaviour
         rb2d = GetComponent<Rigidbody2D>();
         enemy = GetComponent<Transform>();
         maxDist += enemy.position.x;
-        minDist -= enemy.position.x;
+        minDist += enemy.position.x;
         direction = -1;
     }
 
