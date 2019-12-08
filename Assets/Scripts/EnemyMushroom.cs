@@ -61,17 +61,6 @@ public class EnemyMushroom : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.collider.tag.Equals("Player"))
-        {
-            if(collision.gameObject.GetComponent<Player>().playerState==Player.State.fridge)
-            {
-                if(collision.gameObject.GetComponent<Player>().onGround==false)
-                {
-                    Instantiate(poof, transform.position + poof.transform.position, Quaternion.identity, null);
-                    Destroy(gameObject);
-                }
-            }
-        }
         direction *= (-1);
     }
 }
