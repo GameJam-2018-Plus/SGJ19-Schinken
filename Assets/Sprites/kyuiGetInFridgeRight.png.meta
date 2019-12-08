@@ -1,58 +1,52 @@
 fileFormatVersion: 2
-guid: 80fe15fa2893e044098288dc2db05bf8
+guid: 49d9a8776438e4f429fbc694b9f4c37a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6515409835914335217
-    second: kyuiJumpRight_0
+      213: -7904086809414615505
+    second: kyuiGetInFridgeRight_0
   - first:
-      213: -5173140497473348111
-    second: kyuiJumpRight_1
+      213: 3493962708915017605
+    second: kyuiGetInFridgeRight_1
   - first:
-      213: -7468042239983644905
-    second: kyuiJumpRight_2
+      213: -4365103850240818372
+    second: kyuiGetInFridgeRight_2
   - first:
-      213: 2619205776452171678
-    second: kyuiJumpRight_3
+      213: 4347706643682696436
+    second: kyuiGetInFridgeRight_3
   - first:
-      213: 8964063037055337566
-    second: kyuiJumpRight_4
+      213: -4106079414890027204
+    second: kyuiGetInFridgeRight_4
   - first:
-      213: -1572126629887882842
-    second: kyuiJumpRight_5
+      213: -8297470281085637333
+    second: kyuiGetInFridgeRight_5
   - first:
-      213: -8664965928423335771
-    second: kyuiJumpRight_6
+      213: -1455906541470547709
+    second: kyuiGetInFridgeRight_6
   - first:
-      213: -3719889747177233584
-    second: kyuiJumpRight_7
+      213: -2457078187451184698
+    second: kyuiGetInFridgeRight_7
   - first:
-      213: -1135459006843887026
-    second: kyuiJumpRight_8
+      213: 5273354990825999647
+    second: kyuiGetInFridgeRight_8
   - first:
-      213: -4236683954444001000
-    second: kyuiJumpRight_9
+      213: 8267564979397061542
+    second: kyuiGetInFridgeRight_9
   - first:
-      213: -5997524387876373203
-    second: kyuiJumpRight_10
+      213: -3788800695733645478
+    second: kyuiGetInFridgeRight_10
   - first:
-      213: -1688020643659163677
-    second: kyuiJumpRight_11
+      213: 7757321299476592524
+    second: kyuiGetInFridgeRight_11
   - first:
-      213: -3682169907326788224
-    second: kyuiJumpRight_12
+      213: -3117801658958980840
+    second: kyuiGetInFridgeRight_12
   - first:
-      213: -2966493889207159208
-    second: kyuiJumpRight_13
+      213: -4810054461930618902
+    second: kyuiGetInFridgeRight_13
   - first:
-      213: -7555562444769849341
-    second: kyuiJumpRight_14
-  - first:
-      213: -6989504885681653599
-    second: kyuiJumpRight_15
-  - first:
-      213: -6718968783146977153
-    second: kyuiJumpRight_16
+      213: 908320238690589248
+    second: kyuiGetInFridgeRight_14
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -149,91 +143,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: kyuiJumpRight_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 512
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8218b2b90d771f243978f7811cd94573
-      internalID: -6515409835914335217
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: kyuiJumpRight_1
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 512
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a9d84ed04b2f5134fae6c27971200552
-      internalID: -5173140497473348111
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: kyuiJumpRight_2
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 512
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ee1a99a0e615986499f6430b40eac9f0
-      internalID: -7468042239983644905
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: kyuiJumpRight_3
-      rect:
-        serializedVersion: 2
-        x: 384
-        y: 512
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: dce1e48d79fe8a34189a3ba26a55bea6
-      internalID: 2619205776452171678
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: kyuiJumpRight_4
+      name: kyuiGetInFridgeRight_0
       rect:
         serializedVersion: 2
         x: 0
@@ -247,14 +157,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 01e838cf5729b8a40a6bbca3b5aa7a88
-      internalID: 8964063037055337566
+      spriteID: b3bf0ef8d21658743817b1f2e881f156
+      internalID: -7904086809414615505
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: kyuiJumpRight_5
+      name: kyuiGetInFridgeRight_1
       rect:
         serializedVersion: 2
         x: 128
@@ -268,14 +178,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 11b3da8c45372dc4a8c83a1a9c216177
-      internalID: -1572126629887882842
+      spriteID: db37aa4f6fa046d4eb324f9c67eb0a90
+      internalID: 3493962708915017605
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: kyuiJumpRight_6
+      name: kyuiGetInFridgeRight_2
       rect:
         serializedVersion: 2
         x: 256
@@ -289,14 +199,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 479413cce48637846ab863ff346280ef
-      internalID: -8664965928423335771
+      spriteID: 392e53baf397d8e4a9659bc7c42b00fa
+      internalID: -4365103850240818372
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: kyuiJumpRight_7
+      name: kyuiGetInFridgeRight_3
       rect:
         serializedVersion: 2
         x: 384
@@ -310,14 +220,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 525d99a3deb35c845b02fbf5bfc9fe4f
-      internalID: -3719889747177233584
+      spriteID: 7ddf6b6fd3f8d1647900d372c72eb415
+      internalID: 4347706643682696436
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: kyuiJumpRight_8
+      name: kyuiGetInFridgeRight_4
       rect:
         serializedVersion: 2
         x: 0
@@ -331,14 +241,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 77711c81e2a319d49bafc503fd241f54
-      internalID: -1135459006843887026
+      spriteID: 220949e3dec558e479bddd14e978dbde
+      internalID: -4106079414890027204
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: kyuiJumpRight_9
+      name: kyuiGetInFridgeRight_5
       rect:
         serializedVersion: 2
         x: 128
@@ -352,14 +262,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b3569c386e37aa643bb02904696a6e68
-      internalID: -4236683954444001000
+      spriteID: 232fd9c3ba90f9344b3caf2eed02de9b
+      internalID: -8297470281085637333
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: kyuiJumpRight_10
+      name: kyuiGetInFridgeRight_6
       rect:
         serializedVersion: 2
         x: 256
@@ -373,14 +283,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 39584a00f3c4b3142859411ab77f0387
-      internalID: -5997524387876373203
+      spriteID: 3457b86babc267945a59c1650f07c5ef
+      internalID: -1455906541470547709
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: kyuiJumpRight_11
+      name: kyuiGetInFridgeRight_7
       rect:
         serializedVersion: 2
         x: 384
@@ -394,14 +304,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 756c85aabee220343937a499ccf97db2
-      internalID: -1688020643659163677
+      spriteID: 4418c3fa1053eae4db2f7d70709587b9
+      internalID: -2457078187451184698
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: kyuiJumpRight_12
+      name: kyuiGetInFridgeRight_8
       rect:
         serializedVersion: 2
         x: 0
@@ -415,14 +325,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4ec1a30dc9fa1dd419ca8264dc5d89cf
-      internalID: -3682169907326788224
+      spriteID: 4eff8b17e8ae5494895d049380b6239a
+      internalID: 5273354990825999647
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: kyuiJumpRight_13
+      name: kyuiGetInFridgeRight_9
       rect:
         serializedVersion: 2
         x: 128
@@ -436,14 +346,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2938e115a3353e844bbbb736c1a76f46
-      internalID: -2966493889207159208
+      spriteID: 39d36113ffa14584c839a2c7beacd9f9
+      internalID: 8267564979397061542
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: kyuiJumpRight_14
+      name: kyuiGetInFridgeRight_10
       rect:
         serializedVersion: 2
         x: 256
@@ -457,14 +367,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c788e7c833a60654685121f05b9cb879
-      internalID: -7555562444769849341
+      spriteID: 822902e71a51c874c84830b64733dbcf
+      internalID: -3788800695733645478
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: kyuiJumpRight_15
+      name: kyuiGetInFridgeRight_11
       rect:
         serializedVersion: 2
         x: 384
@@ -478,14 +388,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8b6663778be00cd4e844de6a08841a29
-      internalID: -6989504885681653599
+      spriteID: 9b3ba41100ccc3748a7b54a7ea2151ec
+      internalID: 7757321299476592524
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: kyuiJumpRight_16
+      name: kyuiGetInFridgeRight_12
       rect:
         serializedVersion: 2
         x: 0
@@ -499,8 +409,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f18f2e7ed93bdbd4ea1dc668174219f9
-      internalID: -6718968783146977153
+      spriteID: a850a83dd71a40843b9ffdd4cd042f38
+      internalID: -3117801658958980840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kyuiGetInFridgeRight_13
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e19485e03d458dc4797e1354f11a9619
+      internalID: -4810054461930618902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kyuiGetInFridgeRight_14
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdfcdcb159c783e45b3c4eed4734c69e
+      internalID: 908320238690589248
       vertices: []
       indices: 
       edges: []
