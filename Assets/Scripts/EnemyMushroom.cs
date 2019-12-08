@@ -8,7 +8,7 @@ public class EnemyMushroom : MonoBehaviour
     private Transform enemy;
     public float maxDist = 5.5f;
     public float minDist = -5.5f;
-    private float movingSpeed = 5f;
+    public float movingSpeed = 5f;
     private int direction;
     public GameObject poof;
 
@@ -22,7 +22,7 @@ public class EnemyMushroom : MonoBehaviour
         rb2d = GetComponent<Rigidbody2D>();
         enemy = GetComponent<Transform>();
         maxDist += enemy.position.x;
-        minDist -= enemy.position.x;
+        minDist += enemy.position.x;
         direction = -1;
     }
 
