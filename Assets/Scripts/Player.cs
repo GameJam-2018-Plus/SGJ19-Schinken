@@ -50,15 +50,17 @@ public class Player : MonoBehaviour
     private float startPosX, startPosY;
 
     private Vector2 vel;
+    private bool jumped;
 
     void jump()
     {
         float jump = 0;
-        if (Time.time - lastOnGround < coyote && Input.GetButtonDown("Jump"))
+        if (Time.time - lastOnGround < coyote && jumped)
         {
             lastOnGround = -100;
             jump = jumpForce;
         }
+        jumped = false;
         vel += new Vector2(0, jump);
     }
 
@@ -124,6 +126,11 @@ public class Player : MonoBehaviour
 
             Instantiate(poof, new Vector3(startPosX, startPosY, 0) + poof.transform.position, Quaternion.identity, null);
 
+            anim.SetBool("schinken", playerState == State.armed);
+            anim.SetBool("fridge", playerState == State.fridge);
+            anim.SetInteger("direction", dir);
+            anim.SetFloat("speed", Mathf.Abs(vel.x));
+
             cam.Cut();
             ground.Play();
         }
@@ -142,6 +149,9 @@ public class Player : MonoBehaviour
             {
                 playerState = State.fridge;
                 jumpPlateForce = jumpPlateForce * 1.75f;
+                anim.SetTrigger("enterFridge");
+                if (onGround)
+                    ground.Play();
             }
             else
             {
@@ -156,6 +166,11 @@ public class Player : MonoBehaviour
             else if (playerState != State.fridge && schinkenTimeCounter <= 0)
                 playerState = State.armed;
         }
+        else if (Input.GetButtonDown("Attack"))
+        {
+            if (playerState == State.armed)
+                anim.SetTrigger("attack");
+        }
 
         if (playerState != State.fridge)
         {
@@ -167,11 +182,15 @@ public class Player : MonoBehaviour
                 dir = -1;
         }
 
+        jumped |= Input.GetButtonDown("Jump");
+
         anim.SetInteger("direction", dir);
         anim.SetFloat("speed", Mathf.Abs(vel.x));
+        anim.SetBool("fridge", playerState == State.fridge);
+        anim.SetBool("schinken", playerState == State.armed);
     }
 
-        void FixedUpdate()
+    void FixedUpdate()
     {
         if (Input.GetKeyDown(KeyCode.F1))
             ScreenCapture.CaptureScreenshot(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Desktop) + "/Screenshot_" + (System.Environment.TickCount) + ".png");
@@ -245,7 +264,7 @@ public class Player : MonoBehaviour
                TileBase b = floorTiles[i];
                if (b is AnimatedTile)
                {
-                    if (((AnimatedTile)b).tag.Equals("Destructible")&&inFlight)
+                    if (((AnimatedTile)b).tag.Equals("Destructible")&& (Time.time - lastInAir) < 0.15F)
                     {
                         ground.Play();
                         map.SetTile(pos + new Vector3Int(i, 0, 0), null);
@@ -262,7 +281,7 @@ public class Player : MonoBehaviour
         float squash = Mathf.Sin(x * Mathf.PI) * (1 - x);
         float stretch = onGround ? 0 : Mathf.Clamp01(1 - vel.y * vel.y / 500) * (1 - squash) * Mathf.Clamp01((Time.time - lastOnGround) / 0.5F);
         model.localScale = new Vector3(1 + 0.15F * squash - stretch * 0.1F, 1 - 0.15F * squash + stretch * 0.1F, 1) * 2;
-        model.localPosition = new Vector3(0, -0.52F * 0.15F * squash, 0);
+        //model.localPosition = new Vector3(0, -0.52F * 0.15F * squash, 0);
 
         freezeBar.localScale = new Vector3(Mathf.Clamp01(1 - fridgeTimeCounter / maxFridgeTime), 1, 1);
         schinkenBar.localScale = new Vector3(Mathf.Clamp01(1 - schinkenTimeCounter / maxSchinkenTime), 1, 1);

@@ -39,7 +39,7 @@ public class Attack : MonoBehaviour
         clear
     }
 
-    void updateHitbox(Frame val){
+    public void updateHitbox(Frame val){
         if(val!=Frame.clear)
         {
             activeHitbox.SetPath(0, hitboxes[(int) val].GetPath(0));
@@ -50,12 +50,15 @@ public class Attack : MonoBehaviour
         activeHitbox.enabled=false;
     }
 
-    void OnCollisionEnter2D(Collision2D other){
-        if(other.collider.tag.Equals("Enemy")&&activeHitbox.enabled==true)
+    private void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.tag.Equals("Enemy") && activeHitbox.enabled == true)
         {
-            other.gameObject.GetComponent<EnemyMushroom>().Death();
+            col.gameObject.GetComponent<EnemyMushroom>().Death();
         }
     }
+
+
     // Start is called before the first frame update
     void Start()
     {
