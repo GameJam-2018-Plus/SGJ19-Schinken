@@ -95,7 +95,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxDist: 5.5
   minDist: -5.5
-  movingSpeed: 5
+  movingSpeed: 3
   poof: {fileID: 2573805197180235436, guid: a375e20b1854a1041bd6efeadcd43c80, type: 3}
 --- !u!1 &7483729893691501490
 GameObject:

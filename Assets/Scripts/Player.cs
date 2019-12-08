@@ -124,6 +124,11 @@ public class Player : MonoBehaviour
 
             Instantiate(poof, new Vector3(startPosX, startPosY, 0) + poof.transform.position, Quaternion.identity, null);
 
+            anim.SetBool("schinken", playerState == State.armed);
+            anim.SetBool("fridge", playerState == State.fridge);
+            anim.SetInteger("direction", dir);
+            anim.SetFloat("speed", Mathf.Abs(vel.x));
+
             cam.Cut();
             ground.Play();
         }
@@ -149,8 +154,6 @@ public class Player : MonoBehaviour
                 playerState = State.unarmed;
                 jumpPlateForce = jumpPlateForce / 1.75f;
             }
-
-            anim.SetBool("fridge", playerState == State.fridge);
         }
         else if (Input.GetButtonDown("Schinken"))
         {
@@ -158,8 +161,11 @@ public class Player : MonoBehaviour
                 playerState = State.unarmed;
             else if (playerState != State.fridge && schinkenTimeCounter <= 0)
                 playerState = State.armed;
-
-            anim.SetBool("schinken", playerState == State.armed);
+        }
+        else if (Input.GetButtonDown("Attack"))
+        {
+            if (playerState == State.armed)
+                anim.SetTrigger("attack");
         }
 
         if (playerState != State.fridge)
@@ -174,9 +180,11 @@ public class Player : MonoBehaviour
 
         anim.SetInteger("direction", dir);
         anim.SetFloat("speed", Mathf.Abs(vel.x));
+        anim.SetBool("fridge", playerState == State.fridge);
+        anim.SetBool("schinken", playerState == State.armed);
     }
 
-        void FixedUpdate()
+    void FixedUpdate()
     {
         if (Input.GetKeyDown(KeyCode.F1))
             ScreenCapture.CaptureScreenshot(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Desktop) + "/Screenshot_" + (System.Environment.TickCount) + ".png");

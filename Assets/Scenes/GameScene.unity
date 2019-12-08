@@ -87294,7 +87294,7 @@ Tilemap:
       - {fileID: -8835274597533513770, guid: 009518ade54979842a7806a866639874, type: 3}
       - {fileID: 2288768979443741509, guid: 009518ade54979842a7806a866639874, type: 3}
       - {fileID: 8108619787234300647, guid: 009518ade54979842a7806a866639874, type: 3}
-      m_AnimationSpeed: 3
+      m_AnimationSpeed: 3.0000002
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 134, y: 3, z: 0}
@@ -87566,7 +87566,7 @@ Tilemap:
       - {fileID: -8835274597533513770, guid: 009518ade54979842a7806a866639874, type: 3}
       - {fileID: 2288768979443741509, guid: 009518ade54979842a7806a866639874, type: 3}
       - {fileID: 8108619787234300647, guid: 009518ade54979842a7806a866639874, type: 3}
-      m_AnimationSpeed: 3
+      m_AnimationSpeed: 3.0000002
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -29, y: 37, z: 0}
@@ -87585,7 +87585,7 @@ Tilemap:
       - {fileID: -8835274597533513770, guid: 009518ade54979842a7806a866639874, type: 3}
       - {fileID: 2288768979443741509, guid: 009518ade54979842a7806a866639874, type: 3}
       - {fileID: 8108619787234300647, guid: 009518ade54979842a7806a866639874, type: 3}
-      m_AnimationSpeed: 3.0000002
+      m_AnimationSpeed: 3
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -84, y: 45, z: 0}
@@ -87654,7 +87654,7 @@ Tilemap:
       - {fileID: -8835274597533513770, guid: 009518ade54979842a7806a866639874, type: 3}
       - {fileID: 2288768979443741509, guid: 009518ade54979842a7806a866639874, type: 3}
       - {fileID: 8108619787234300647, guid: 009518ade54979842a7806a866639874, type: 3}
-      m_AnimationSpeed: 3.0000002
+      m_AnimationSpeed: 3
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -79, y: 66, z: 0}
@@ -94506,7 +94506,6 @@ GameObject:
   - component: {fileID: 540274689}
   - component: {fileID: 540274688}
   - component: {fileID: 540274687}
-  - component: {fileID: 540274690}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -94598,32 +94597,6 @@ MonoBehaviour:
   maxSchinkenTime: 10
   fridgeGrav: 120
   jumpPlateForce: 30
---- !u!114 &540274690
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 540274684}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b31dfa8d9016da078b0604a96efef442, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  frame7Left: {fileID: 1954346287}
-  frame8Left: {fileID: 963917803}
-  frame9Left: {fileID: 1187141988}
-  frame10Left: {fileID: 530886199}
-  frame11Left: {fileID: 415788577}
-  frame12Left: {fileID: 1504776894}
-  frame13Left: {fileID: 1185826032}
-  frame7Right: {fileID: 1634256244}
-  frame8Right: {fileID: 67600918}
-  frame9Right: {fileID: 1297244289}
-  frame10Right: {fileID: 401304407}
-  frame11Right: {fileID: 1954181306}
-  frame12Right: {fileID: 504425587}
-  frame13Right: {fileID: 2090848474}
 --- !u!1001 &566030011
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -107206,9 +107179,10 @@ GameObject:
   - component: {fileID: 1932405862}
   - component: {fileID: 1932405863}
   - component: {fileID: 1932405864}
+  - component: {fileID: 1932405865}
   m_Layer: 0
   m_Name: Model
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -107296,6 +107270,32 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1932405865
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1932405861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b31dfa8d9016da078b0604a96efef442, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  frame7Left: {fileID: 1954346287}
+  frame8Left: {fileID: 963917803}
+  frame9Left: {fileID: 1187141988}
+  frame10Left: {fileID: 530886199}
+  frame11Left: {fileID: 415788577}
+  frame12Left: {fileID: 1504776894}
+  frame13Left: {fileID: 1185826032}
+  frame7Right: {fileID: 1634256244}
+  frame8Right: {fileID: 67600918}
+  frame9Right: {fileID: 1297244289}
+  frame10Right: {fileID: 401304407}
+  frame11Right: {fileID: 1954181306}
+  frame12Right: {fileID: 504425587}
+  frame13Right: {fileID: 2090848474}
 --- !u!1 &1954181305
 GameObject:
   m_ObjectHideFlags: 0
