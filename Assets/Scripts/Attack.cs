@@ -39,15 +39,16 @@ public class Attack : MonoBehaviour
         clear
     }
 
-    public void updateHitbox(Frame val){
-        if(val!=Frame.clear)
+    public void updateHitbox(Frame val)
+    {
+        if (val != Frame.clear)
         {
-            activeHitbox.SetPath(0, hitboxes[(int) val].GetPath(0));
-            activeHitbox.enabled=true;
+            activeHitbox.SetPath(0, hitboxes[(int)val].GetPath(0));
+            activeHitbox.enabled = true;
             return;
         }
-        activeHitbox.pathCount=0;
-        activeHitbox.enabled=false;
+        activeHitbox.pathCount = 0;
+        activeHitbox.enabled = false;
     }
 
     private void OnTriggerEnter2D(Collider2D col)
@@ -56,16 +57,20 @@ public class Attack : MonoBehaviour
         {
             col.gameObject.GetComponent<EnemyMushroom>().Death();
         }
+        if (col.tag.Equals("Boss") && activeHitbox.enabled == true)
+        {
+            col.gameObject.GetComponent<BossBehaviour>().ReduceBossLive(20);
+        }
     }
 
 
     // Start is called before the first frame update
     void Start()
     {
-        hitboxes=new PolygonCollider2D[]{frame7Left, frame8Left, frame9Left, frame10Left, frame11Left, frame12Left, frame13Left, frame7Right, frame8Right, frame9Right, frame10Right, frame11Right, frame12Right, frame13Right};
-        activeHitbox=gameObject.AddComponent<PolygonCollider2D>();
-        activeHitbox.isTrigger=true;
-        activeHitbox.pathCount=0;
-        activeHitbox.enabled=false;
+        hitboxes = new PolygonCollider2D[] { frame7Left, frame8Left, frame9Left, frame10Left, frame11Left, frame12Left, frame13Left, frame7Right, frame8Right, frame9Right, frame10Right, frame11Right, frame12Right, frame13Right };
+        activeHitbox = gameObject.AddComponent<PolygonCollider2D>();
+        activeHitbox.isTrigger = true;
+        activeHitbox.pathCount = 0;
+        activeHitbox.enabled = false;
     }
 }

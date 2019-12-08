@@ -2,13 +2,19 @@
 using System.Collections.Generic;
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class BossBehaviour : MonoBehaviour
 {
 
     private Animator anim;
-    public Transform model; 
+    public Transform model;
     private System.Random rand = new System.Random();
+
+
+    public int maxHealth = 100;
+    public int curHealth = 100;
 
     //boss has different states
     public enum State
@@ -26,6 +32,17 @@ public class BossBehaviour : MonoBehaviour
         playerState = State.idle;
         anim = model.GetComponentInChildren<Animator>();
         StartCoroutine(Idle());
+    }
+
+
+    public void ReduceBossLive(int damage)
+    {
+        curHealth -= damage;
+        //you won
+        if (curHealth <= 0)
+        {
+            SceneManager.LoadScene(3);
+        }
     }
 
     void SporeAttacking()
@@ -53,7 +70,7 @@ public class BossBehaviour : MonoBehaviour
                 StartCoroutine(Idle());
                 break;
         }
-        
+
     }
     void RootAttacking()
     {
