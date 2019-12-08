@@ -50,15 +50,17 @@ public class Player : MonoBehaviour
     private float startPosX, startPosY;
 
     private Vector2 vel;
+    private bool jumped;
 
     void jump()
     {
         float jump = 0;
-        if (Time.time - lastOnGround < coyote && Input.GetButtonDown("Jump"))
+        if (Time.time - lastOnGround < coyote && jumped)
         {
             lastOnGround = -100;
             jump = jumpForce;
         }
+        jumped = false;
         vel += new Vector2(0, jump);
     }
 
@@ -148,6 +150,8 @@ public class Player : MonoBehaviour
                 playerState = State.fridge;
                 jumpPlateForce = jumpPlateForce * 1.75f;
                 anim.SetTrigger("enterFridge");
+                if (onGround)
+                    ground.Play();
             }
             else
             {
@@ -177,6 +181,8 @@ public class Player : MonoBehaviour
             else if (vel.x < -0.01F)
                 dir = -1;
         }
+
+        jumped |= Input.GetButtonDown("Jump");
 
         anim.SetInteger("direction", dir);
         anim.SetFloat("speed", Mathf.Abs(vel.x));
